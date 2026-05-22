@@ -88,7 +88,6 @@ body {
   overflow-y: auto;
 }
 
-/* Custom scrollbar for sidebar */
 .sidebar::-webkit-scrollbar { width: 4px; }
 .sidebar::-webkit-scrollbar-track { background: transparent; }
 .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
@@ -108,7 +107,6 @@ body {
   flex-shrink: 0;
 }
 
-.brand-text {}
 .brand-name {
   font-family: 'Outfit', sans-serif;
   font-size: 18px;
@@ -125,9 +123,7 @@ body {
   margin-top: 3px;
 }
 
-.nav-section {
-  padding: 12px 0 4px;
-}
+.nav-section { padding: 12px 0 4px; }
 
 .nav-section-title {
   font-family: 'Share Tech Mono', monospace;
@@ -142,10 +138,7 @@ body {
 }
 
 .nav-section-title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
+  content: ''; flex: 1; height: 1px; background: var(--border);
 }
 
 .nav-item {
@@ -160,101 +153,28 @@ body {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.3px;
-  position: relative;
 }
 
-.nav-item:hover {
-  background: rgba(255,255,255,0.04);
-  color: var(--text2);
-  border-left-color: rgba(255,255,255,0.15);
-}
-
-.nav-item.active {
-  background: rgba(55,138,221,0.1);
-  color: var(--blue3);
-  border-left-color: var(--blue2);
-  font-weight: 600;
-}
-
+.nav-item:hover { background: rgba(255,255,255,0.04); color: var(--text2); border-left-color: rgba(255,255,255,0.15); }
+.nav-item.active { background: rgba(55,138,221,0.1); color: var(--blue3); border-left-color: var(--blue2); font-weight: 600; }
 .nav-item.active.c-gold  { background: rgba(201,168,76,0.1);  color: var(--gold2); border-left-color: var(--gold); }
 .nav-item.active.c-teal  { background: rgba(29,158,117,0.1);  color: var(--teal2); border-left-color: var(--teal1); }
 .nav-item.active.c-red   { background: rgba(226,75,74,0.1);   color: var(--red2);  border-left-color: var(--red1); }
 .nav-item.active.c-green { background: rgba(99,153,34,0.1);   color: var(--green2); border-left-color: var(--green1); }
 .nav-item.active.c-blue  { background: rgba(55,138,221,0.1);  color: var(--blue3); border-left-color: var(--blue2); }
-
 .nav-icon { font-size: 15px; width: 20px; text-align: center; }
 
-.nav-badge {
-  margin-left: auto;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 9px;
-  padding: 2px 6px;
-  border-radius: 3px;
-  background: rgba(255,255,255,0.06);
-  color: var(--dim);
-}
-
 /* ═══════════════ MAIN CONTENT ═══════════════ */
-.main {
-  margin-left: 260px;
-  flex: 1;
-  min-height: 100vh;
-  padding: 32px 36px 80px;
-  max-width: 100%;
-}
+.main { margin-left: 260px; flex: 1; min-height: 100vh; padding: 32px 36px 80px; max-width: 100%; }
 
-/* ═══════════════ TOPBAR ═══════════════ */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 28px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border);
-}
+.topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.page-label { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 4px; }
+.page-title { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 800; color: #fff; letter-spacing: 0.5px; line-height: 1.1; }
+.page-title span { color: var(--gold); }
 
-.topbar-left {}
-.page-label {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 10px;
-  color: var(--dim);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
+.topbar-pills { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.tpill { font-family: 'Share Tech Mono', monospace; font-size: 10px; padding: 4px 10px; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--dim); letter-spacing: 1px; }
 
-.page-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 0.5px;
-  line-height: 1.1;
-}
-
-.page-title span {
-  color: var(--gold);
-}
-
-.topbar-pills {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.tpill {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 10px;
-  padding: 4px 10px;
-  border-radius: 4px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border);
-  color: var(--dim);
-  letter-spacing: 1px;
-}
-
-/* ═══════════════ SECTIONS ═══════════════ */
 .section { display: none; animation: fadeIn 0.3s ease; }
 .section.visible { display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
@@ -262,478 +182,113 @@ body {
 /* ═══════════════ HERO BANNER ═══════════════ */
 .hero-banner {
   background: linear-gradient(135deg, rgba(21,55,100,0.5) 0%, rgba(6,17,31,0.9) 100%);
-  border: 1px solid rgba(55,138,221,0.2);
-  border-top: 3px solid var(--gold);
-  border-radius: 14px;
-  padding: 28px 32px;
-  margin-bottom: 24px;
-  position: relative;
-  overflow: hidden;
+  border: 1px solid rgba(55,138,221,0.2); border-top: 3px solid var(--gold); border-radius: 14px;
+  padding: 28px 32px; margin-bottom: 24px; position: relative; overflow: hidden;
 }
-
-.hero-banner::before {
-  content: '';
-  position: absolute;
-  top: -1px; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold) 0%, var(--gold2) 50%, transparent 100%);
-}
-
-.hero-banner::after {
-  content: 'LSPD';
-  position: absolute;
-  right: 28px; top: 50%;
-  transform: translateY(-50%);
-  font-family: 'Outfit', sans-serif;
-  font-size: 72px;
-  font-weight: 800;
-  color: rgba(255,255,255,0.03);
-  letter-spacing: 8px;
-  pointer-events: none;
-}
-
-.hero-pre {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 10px;
-  color: var(--gold);
-  letter-spacing: 3px;
-  margin-bottom: 8px;
-}
-
-.hero-h {
-  font-family: 'Outfit', sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 10px;
-  line-height: 1.15;
-}
-
-.hero-p {
-  font-size: 15px;
-  color: var(--muted);
-  max-width: 660px;
-  line-height: 1.7;
-}
+.hero-banner::before { content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold2) 50%, transparent 100%); }
+.hero-pre { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 3px; margin-bottom: 8px; }
+.hero-h { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.15; }
+.hero-p { font-size: 15px; color: var(--muted); max-width: 660px; line-height: 1.7; }
 
 /* ═══════════════ GRID CARDS ═══════════════ */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 14px;
-  margin-bottom: 14px;
-}
-
-.cards-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 14px;
-  margin-bottom: 14px;
-}
-
-.card {
-  background: var(--glass);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 20px 22px;
-  transition: border-color 0.18s, transform 0.18s;
-}
-
-.card:hover {
-  border-color: var(--border2);
-  transform: translateY(-2px);
-}
-
-.card-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.card-id {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.card-ico {
-  width: 42px; height: 42px;
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  font-size: 20px;
-}
-
-.ico-blue  { background: rgba(21,95,165,0.25);  color: var(--blue3);  border: 1px solid rgba(55,138,221,0.3); }
-.ico-amber { background: rgba(186,117,23,0.2);   color: var(--gold3);  border: 1px solid rgba(239,159,39,0.3); }
-.ico-teal  { background: rgba(15,110,86,0.2);    color: var(--teal2);  border: 1px solid rgba(29,158,117,0.3); }
-.ico-red   { background: rgba(163,45,45,0.2);    color: var(--red2);   border: 1px solid rgba(226,75,74,0.3); }
-.ico-green { background: rgba(39,80,10,0.25);    color: var(--green2); border: 1px solid rgba(99,153,34,0.3); }
-
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-bottom: 14px; }
+.cards-grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px; }
+.card { background: var(--glass); backdrop-filter: blur(8px); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; transition: border-color 0.18s, transform 0.18s; }
+.card:hover { border-color: var(--border2); transform: translateY(-2px); }
+.card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 16px; }
+.card-id { display: flex; align-items: center; gap: 12px; }
+.card-ico { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; }
+.ico-blue  { background: rgba(21,95,165,0.25); color: var(--blue3); border: 1px solid rgba(55,138,221,0.3); }
+.ico-amber { background: rgba(186,117,23,0.2); color: var(--gold3); border: 1px solid rgba(239,159,39,0.3); }
+.ico-teal  { background: rgba(15,110,86,0.2); color: var(--teal2); border: 1px solid rgba(29,158,117,0.3); }
+.ico-red   { background: rgba(163,45,45,0.2); color: var(--red2); border: 1px solid rgba(226,75,74,0.3); }
+.ico-green { background: rgba(39,80,10,0.25); color: var(--green2); border: 1px solid rgba(99,153,34,0.3); }
 .card-name { font-size: 17px; font-weight: 700; color: var(--text); line-height: 1.2; }
 .card-sub  { font-size: 11px; color: var(--dim); margin-top: 4px; font-family: 'Share Tech Mono', monospace; letter-spacing: 0.5px; }
 
 /* ═══════════════ BADGE ═══════════════ */
-.badge {
-  font-size: 10px;
-  font-family: 'Share Tech Mono', monospace;
-  padding: 3px 10px;
-  border-radius: 4px;
-  white-space: nowrap;
-  letter-spacing: 0.5px;
-  flex-shrink: 0;
-}
-.badge-blue  { background: rgba(21,95,165,0.2);  color: var(--blue3);  border: 1px solid rgba(55,138,221,0.25); }
-.badge-amber { background: rgba(186,117,23,0.2); color: var(--gold3);  border: 1px solid rgba(239,159,39,0.25); }
-.badge-teal  { background: rgba(15,110,86,0.2);  color: var(--teal2);  border: 1px solid rgba(29,158,117,0.25); }
-.badge-red   { background: rgba(163,45,45,0.2);  color: var(--red2);   border: 1px solid rgba(226,75,74,0.25); }
-.badge-green { background: rgba(39,80,10,0.2);   color: var(--green2); border: 1px solid rgba(99,153,34,0.25); }
+.badge { font-size: 10px; font-family: 'Share Tech Mono', monospace; padding: 3px 10px; border-radius: 4px; white-space: nowrap; letter-spacing: 0.5px; flex-shrink: 0; }
+.badge-blue  { background: rgba(21,95,165,0.2); color: var(--blue3); border: 1px solid rgba(55,138,221,0.25); }
+.badge-amber { background: rgba(186,117,23,0.2); color: var(--gold3); border: 1px solid rgba(239,159,39,0.25); }
+.badge-teal  { background: rgba(15,110,86,0.2); color: var(--teal2); border: 1px solid rgba(29,158,117,0.25); }
+.badge-red   { background: rgba(163,45,45,0.2); color: var(--red2); border: 1px solid rgba(226,75,74,0.25); }
+.badge-green { background: rgba(39,80,10,0.2); color: var(--green2); border: 1px solid rgba(99,153,34,0.25); }
 
-/* ═══════════════ CHIPS / ITEMS ═══════════════ */
-.chips-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-bottom: 14px;
-}
-
-.chip {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 8px;
-  padding: 7px 13px;
-  min-width: 62px;
-}
-
+/* ═══════════════ CHIPS / DEFCON / INFO BLOCKS ═══════════════ */
+.chips-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+.chip { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 7px 13px; min-width: 62px; }
 .chip-lbl { font-size: 9px; color: var(--dim); margin-bottom: 4px; font-family: 'Share Tech Mono', monospace; text-transform: uppercase; }
 .chip-val { font-size: 14px; font-weight: 700; color: var(--text2); font-family: 'Share Tech Mono', monospace; }
 
-/* ═══════════════ DEFCON ROW ═══════════════ */
-.defcon-row {
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.dc {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 11px;
-  font-family: 'Share Tech Mono', monospace;
-  padding: 5px 12px;
-  border-radius: 6px;
-  border: 1px solid;
-  flex: 1;
-  min-width: 150px;
-  line-height: 1.4;
-}
+.defcon-row { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.dc { display: flex; align-items: center; gap: 7px; font-size: 11px; font-family: 'Share Tech Mono', monospace; padding: 5px 12px; border-radius: 6px; border: 1px solid; flex: 1; min-width: 150px; line-height: 1.4; }
 .dc-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-.dc-green  { background: rgba(39,80,10,0.3);   border-color: rgba(99,153,34,0.4);  color: var(--green2); }
-.dc-green  .dc-dot { background: var(--green1); }
-.dc-orange { background: rgba(99,56,6,0.3);    border-color: rgba(239,159,39,0.4); color: var(--gold3); }
-.dc-orange .dc-dot { background: #EF9F27; }
-.dc-red    { background: rgba(121,31,31,0.3);  border-color: rgba(226,75,74,0.4);  color: var(--red2); }
-.dc-red    .dc-dot { background: var(--red1); }
-.dc-gray   { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); color: var(--muted); }
-.dc-gray   .dc-dot { background: #5F5E5A; }
+.dc-green  { background: rgba(39,80,10,0.3); border-color: rgba(99,153,34,0.4); color: var(--green2); } .dc-green .dc-dot { background: var(--green1); }
+.dc-red    { background: rgba(121,31,31,0.3); border-color: rgba(226,75,74,0.4); color: var(--red2); } .dc-red .dc-dot { background: var(--red1); }
 
-/* ═══════════════ GROUP CARD ═══════════════ */
-.group-card {
-  background: var(--glass);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 20px 22px;
-  margin-bottom: 14px;
-  transition: border-color 0.18s;
-}
-.group-card:hover { border-color: var(--border2); }
-
-.group-head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.grades-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 14px;
-}
-
-.grade-pill {
-  font-size: 13px;
-  font-weight: 500;
-  padding: 4px 12px;
-  border-radius: 5px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: var(--text2);
-}
-
-/* ═══════════════ INFO BLOCK ═══════════════ */
-.info-block {
-  background: rgba(10,22,42,0.7);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--blue2);
-  border-radius: 8px;
-  padding: 14px 18px;
-  margin-bottom: 14px;
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
+.info-block { background: rgba(10,22,42,0.7); border: 1px solid var(--border); border-left: 3px solid var(--blue2); border-radius: 8px; padding: 14px 18px; margin-bottom: 14px; font-size: 14px; color: var(--muted); line-height: 1.6; }
 .info-block.warn { border-left-color: var(--gold); }
 .info-block.danger { border-left-color: var(--red1); }
 .info-block.success { border-left-color: var(--teal1); }
-
 .info-block strong { color: var(--text2); font-weight: 700; }
 
-/* ═══════════════ DEFCON EXPLAINER ═══════════════ */
-.defcon-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-  font-size: 14px;
-}
+.alert { display: flex; gap: 12px; background: rgba(186,117,23,0.1); border: 1px solid rgba(201,168,76,0.25); border-radius: 8px; padding: 16px 20px; margin-bottom: 16px; font-size: 14px; color: #d4b060; line-height: 1.6; font-weight: 500; }
+.alert.danger { background: rgba(163,45,45,0.12); border-color: rgba(226,75,74,0.25); color: var(--red2); }
+.alert-icon { font-size: 20px; flex-shrink: 0; }
 
-.defcon-table th {
-  text-align: left;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border2);
-  color: var(--dim);
-  font-weight: 600;
-  font-family: 'Share Tech Mono', monospace;
-  letter-spacing: 1px;
-  font-size: 11px;
-  text-transform: uppercase;
-}
+/* ═══════════════ RULES / STEPS ═══════════════ */
+.rule-card { background: var(--glass); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: border-color 0.15s; }
+.rule-card:hover { border-color: var(--border2); }
+.rule-num { font-family: 'Share Tech Mono', monospace; font-size: 13px; color: var(--dim); min-width: 32px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+.rule-text { font-size: 14px; color: var(--text2); line-height: 1.6; }
+.rule-text strong { color: #fff; font-weight: 700; display:block; margin-bottom: 3px; }
 
-.defcon-table td {
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--border);
-  vertical-align: middle;
-}
-
-.defcon-table tr:last-child td { border-bottom: none; }
-.defcon-table tr:hover td { background: rgba(255,255,255,0.02); }
-
-.dc-level {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-/* ═══════════════ PROCEDURE STEPS ═══════════════ */
-.steps-list {
-  counter-reset: step;
-  list-style: none;
-  margin-bottom: 16px;
-}
-
-.step-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  counter-increment: step;
-}
-
+.steps-list { counter-reset: step; list-style: none; margin-bottom: 16px; }
+.step-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); counter-increment: step; }
 .step-item:last-child { border-bottom: none; }
-
-.step-num {
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  background: rgba(55,138,221,0.15);
-  border: 1px solid rgba(55,138,221,0.3);
-  color: var(--blue3);
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 13px;
-  font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.step-content {}
+.step-num { width: 30px; height: 30px; border-radius: 50%; background: rgba(55,138,221,0.15); border: 1px solid rgba(55,138,221,0.3); color: var(--blue3); font-family: 'Share Tech Mono', monospace; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
 .step-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
 .step-desc  { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-/* ═══════════════ COMMANDEMENT CARD ═══════════════ */
-.cmd-card {
-  background: rgba(60,15,15,0.45);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(226,75,74,0.2);
-  border-top: 3px solid rgba(201,168,76,0.7);
-  border-radius: 12px;
-  padding: 26px 28px;
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  margin-bottom: 14px;
-}
-.cmd-ico   { font-size: 34px; flex-shrink: 0; line-height: 1; }
-.cmd-title { font-size: 20px; font-weight: 800; color: var(--gold2); margin-bottom: 8px; }
-.cmd-body  { font-size: 14px; color: #c5a0a0; line-height: 1.8; font-weight: 500;}
-.cmd-note  { font-size: 12px; color: #8c5b5b; margin-top: 10px; font-family: 'Share Tech Mono', monospace; border-top: 1px solid rgba(226,75,74,0.15); padding-top: 10px; }
+/* ═══════════════ TABLES / TOC ═══════════════ */
+.defcon-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14px; }
+.defcon-table th { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border2); color: var(--dim); font-weight: 600; font-family: 'Share Tech Mono', monospace; letter-spacing: 1px; font-size: 11px; text-transform: uppercase; }
+.defcon-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.defcon-table tr:last-child td { border-bottom: none; }
+.defcon-table tr:hover td { background: rgba(255,255,255,0.02); }
 
-/* ═══════════════ ALERT BOX ═══════════════ */
-.alert {
-  display: flex;
-  gap: 12px;
-  background: rgba(186,117,23,0.1);
-  border: 1px solid rgba(201,168,76,0.25);
-  border-radius: 8px;
-  padding: 16px 20px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  color: #d4b060;
-  line-height: 1.6;
-  font-weight: 500;
-}
-.alert.danger { background: rgba(163,45,45,0.12); border-color: rgba(226,75,74,0.25); color: var(--red2); }
-.alert.success { background: rgba(15,110,86,0.12); border-color: rgba(29,158,117,0.25); color: var(--teal2); }
-.alert-icon { font-size: 20px; flex-shrink: 0; }
-
-/* ═══════════════ RULE LINE ═══════════════ */
-.rule-card {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 20px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  transition: border-color 0.15s;
-}
-.rule-card:hover { border-color: var(--border2); }
-.rule-num {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 12px;
-  color: var(--dim);
-  min-width: 32px;
-  flex-shrink: 0;
-  margin-top: 3px;
-  font-weight: 700;
-}
-.rule-text { font-size: 14px; color: var(--text2); line-height: 1.6; }
-.rule-text strong { color: #fff; font-weight: 700; }
-
-/* ═══════════════ SECTION LABEL ═══════════════ */
-.sec-label {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 11px;
-  color: var(--dim);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  margin-top: 28px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-}
+.sec-label { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; margin-top: 28px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
 .sec-label:first-child { margin-top: 0; }
 .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-/* ═══════════════ TOC ═══════════════ */
-.toc-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 10px;
-  margin-bottom: 24px;
-}
+.toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-bottom: 24px; }
+.toc-item { background: rgba(10,22,42,0.7); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 12px; }
+.toc-item:hover { background: rgba(55,138,221,0.08); border-color: rgba(55,138,221,0.25); transform: translateY(-2px); }
+.toc-ico { font-size: 20px; }
+.toc-name { font-size: 15px; font-weight: 700; color: var(--text2); }
+.toc-desc { font-size: 11px; color: var(--dim); margin-top: 2px; font-family: 'Share Tech Mono', monospace; }
 
-.toc-item {
-  background: rgba(10,22,42,0.7);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 16px;
-  cursor: pointer;
-  transition: all 0.15s;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.toc-item:hover {
-  background: rgba(55,138,221,0.08);
-  border-color: rgba(55,138,221,0.25);
-  transform: translateY(-2px);
-}
-.toc-ico   { font-size: 20px; }
-.toc-name  { font-size: 15px; font-weight: 700; color: var(--text2); }
-.toc-desc  { font-size: 11px; color: var(--dim); margin-top: 2px; font-family: 'Share Tech Mono', monospace; }
+/* ═══════════════ MISC UI ═══════════════ */
+.cmd-card { background: rgba(60,15,15,0.45); border: 1px solid rgba(226,75,74,0.2); border-top: 3px solid rgba(201,168,76,0.7); border-radius: 12px; padding: 26px 28px; display: flex; align-items: flex-start; gap: 18px; margin-bottom: 14px; }
+.cmd-ico { font-size: 34px; flex-shrink: 0; line-height: 1; }
+.cmd-title { font-size: 20px; font-weight: 800; color: var(--gold2); margin-bottom: 8px; }
+.cmd-body { font-size: 14px; color: #c5a0a0; line-height: 1.8; font-weight: 500;}
+.cmd-note { font-size: 12px; color: #8c5b5b; margin-top: 10px; font-family: 'Share Tech Mono', monospace; border-top: 1px solid rgba(226,75,74,0.15); padding-top: 10px; }
 
-/* ═══════════════ STAT ROW ═══════════════ */
-.stat-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.stat-box {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 18px;
-  text-align: center;
-}
+.stat-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.stat-box { background: var(--glass); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; text-align: center; }
 .stat-val { font-size: 32px; font-weight: 800; color: var(--gold2); line-height: 1; margin-bottom: 6px; }
 .stat-lab { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--dim); letter-spacing: 1px; text-transform: uppercase; }
 
-/* ═══════════════ FOOTER ═══════════════ */
-.footer {
-  margin-top: 60px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
+.live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green2); animation: pulse-dot 2s ease-in-out infinite; margin-right: 4px; }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: center; gap: 12px; }
 .footer-logo { width: 36px; height: 36px; object-fit: contain; opacity: 0.25; }
 .footer-text { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: #3b5f85; letter-spacing: 2px; text-align: center; }
 
-/* ═══════════════ MOBILE TOGGLE ═══════════════ */
-.menu-toggle {
-  display: none;
-  position: fixed;
-  top: 14px; left: 14px;
-  z-index: 200;
-  background: rgba(4,10,20,0.9);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
-  color: var(--muted);
-  font-size: 18px;
-}
-
-.sidebar-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 99;
-}
+.menu-toggle { display: none; position: fixed; top: 14px; left: 14px; z-index: 200; background: rgba(4,10,20,0.9); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; cursor: pointer; color: var(--muted); font-size: 18px; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; }
 
 @media (max-width: 760px) {
   .menu-toggle { display: flex; align-items: center; }
@@ -743,21 +298,6 @@ body {
   .main { margin-left: 0; padding: 20px 16px 60px; }
   .topbar { flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 48px; }
   .topbar-pills { justify-content: flex-start; }
-}
-
-/* ═══════════════ PULSE ANIMATION ═══════════════ */
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-.live-dot {
-  display: inline-block;
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--green2);
-  animation: pulse-dot 2s ease-in-out infinite;
-  margin-right: 4px;
 }
 </style>
 </head>
@@ -858,7 +398,7 @@ body {
       <div class="hero-banner">
         <div class="hero-pre">⚡ DOCUMENT OFFICIEL — USAGE INTERNE LSPD</div>
         <div class="hero-h">Bienvenue dans la Los Santos<br>Police Department</div>
-        <div class="hero-p">Ce manuel est votre référence opérationnelle sur le serveur NightCity FA. Il couvre les tenues réglementaires, l'armement, les véhicules, les niveaux d'alerte DEFCON et l'ensemble de nos procédures (arrestations, radio). Lisez-le attentivement pour assurer un RP policier cohérent et immersif.</div>
+        <div class="hero-p">Ce manuel est votre référence opérationnelle sur le serveur NightCity FA. Il couvre les tenues réglementaires, l'armement, les véhicules, les niveaux d'alerte DEFCON, les indicatifs d'unités et l'ensemble de nos procédures.</div>
       </div>
 
       <div class="stat-row">
@@ -871,42 +411,20 @@ body {
       <div class="sec-label">Navigation rapide</div>
       <div class="toc-grid">
         <div class="toc-item" onclick="goToId('tenues','c-amber')">
-          <div class="toc-ico">👕</div>
-          <div><div class="toc-name">Tenues</div><div class="toc-desc">Codes vestimentaires</div></div>
+          <div class="toc-ico">👕</div><div><div class="toc-name">Tenues</div><div class="toc-desc">Codes vestimentaires</div></div>
         </div>
         <div class="toc-item" onclick="goToId('armement','c-blue')">
-          <div class="toc-ico">🔫</div>
-          <div><div class="toc-name">Armement</div><div class="toc-desc">Armes autorisées par grade</div></div>
+          <div class="toc-ico">🔫</div><div><div class="toc-name">Armement</div><div class="toc-desc">Armes autorisées par grade</div></div>
         </div>
         <div class="toc-item" onclick="goToId('vehicules','c-blue')">
-          <div class="toc-ico">🚔</div>
-          <div><div class="toc-name">Véhicules</div><div class="toc-desc">Règles de flotte et patrouille</div></div>
-        </div>
-        <div class="toc-item" onclick="goToId('permis','c-amber')">
-          <div class="toc-ico">🪪</div>
-          <div><div class="toc-name">Permis</div><div class="toc-desc">PPA et documents civils</div></div>
-        </div>
-        <div class="toc-item" onclick="goToId('defcon','c-amber')">
-          <div class="toc-ico">🚨</div>
-          <div><div class="toc-name">DEFCON</div><div class="toc-desc">Niveaux d'alerte</div></div>
+          <div class="toc-ico">🚔</div><div><div class="toc-name">Véhicules</div><div class="toc-desc">Règles de flotte et patrouille</div></div>
         </div>
         <div class="toc-item" onclick="goToId('radio','c-amber')">
-          <div class="toc-ico">📻</div>
-          <div><div class="toc-name">Radio</div><div class="toc-desc">Codes 10 essentiels</div></div>
+          <div class="toc-ico">📻</div><div><div class="toc-name">Radio & Indicatifs</div><div class="toc-desc">Adam, Tango, Codes 10...</div></div>
         </div>
         <div class="toc-item" onclick="goToId('arrestation','c-teal')">
-          <div class="toc-ico">⚖️</div>
-          <div><div class="toc-name">Arrestation</div><div class="toc-desc">Procédures & Avocats</div></div>
+          <div class="toc-ico">⚖️</div><div><div class="toc-name">Arrestation</div><div class="toc-desc">Procédures & Avocats</div></div>
         </div>
-        <div class="toc-item" onclick="goToId('reglement','c-red')">
-          <div class="toc-ico">📜</div>
-          <div><div class="toc-name">Règlement</div><div class="toc-desc">Code de conduite agent</div></div>
-        </div>
-      </div>
-
-      <div class="alert warn">
-        <span class="alert-icon">⚠️</span>
-        <span>Ce manuel est un outil de référence. Il ne remplace pas la formation dispensée par vos FTO. En cas de doute sur une procédure, contactez toujours un supérieur hiérarchique en radio.</span>
       </div>
     </div>
 
@@ -916,9 +434,6 @@ body {
           <div class="page-label">Manuel Rookie</div>
           <div class="page-title">Guide des <span>Tenues</span></div>
         </div>
-        <div class="topbar-pills">
-          <div class="tpill">Tous grades</div>
-        </div>
       </div>
 
       <div class="info-block">
@@ -927,14 +442,9 @@ body {
 
       <div class="sec-label">Unités Spéciales</div>
       <div class="cards-grid">
-
         <div class="card">
           <div class="card-head">
-            <div class="card-id">
-              <div class="card-ico ico-blue">🐕</div>
-              <div><div class="card-name">K9</div><div class="card-sub">UNITÉ CYNOPHILE</div></div>
-            </div>
-            <span class="badge badge-blue">Spéciale</span>
+            <div class="card-id"><div class="card-ico ico-blue">🐕</div><div><div class="card-name">K9</div><div class="card-sub">UNITÉ CYNOPHILE</div></div></div>
           </div>
           <div class="chips-row">
             <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
@@ -943,29 +453,9 @@ body {
             <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">133</span></div>
           </div>
         </div>
-
         <div class="card">
           <div class="card-head">
-            <div class="card-id">
-              <div class="card-ico ico-blue">✈️</div>
-              <div><div class="card-name">ASD Air Unit</div><div class="card-sub">UNITÉ AÉRIENNE</div></div>
-            </div>
-            <span class="badge badge-blue">Spéciale</span>
-          </div>
-          <div class="chips-row">
-            <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">579</span></div>
-            <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">214</span></div>
-            <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">198</span></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id">
-              <div class="card-ico ico-blue">🎯</div>
-              <div><div class="card-name">SWAT</div><div class="card-sub">INTERVENTION TACTIQUE</div></div>
-            </div>
-            <span class="badge badge-blue">Spéciale</span>
+            <div class="card-id"><div class="card-ico ico-blue">🎯</div><div><div class="card-name">SWAT</div><div class="card-sub">TACTIQUE</div></div></div>
           </div>
           <div class="chips-row">
             <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">155</span></div>
@@ -974,88 +464,17 @@ body {
             <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">92</span></div>
           </div>
         </div>
-
       </div>
-
-      <div class="sec-label">Officiers</div>
-
-      <div class="group-card">
-        <div class="group-head">
-          <div class="card-ico ico-amber">🆕</div>
-          <div style="flex:1">
-            <div class="card-name">Tenue R — Recrue</div>
-            <div class="card-sub">PÉRIODE DE FORMATION</div>
-          </div>
-          <span class="badge badge-amber">Officier</span>
-        </div>
-        <div class="chips-row">
-          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">600-4</span></div>
-          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-          <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-13</span></div>
-        </div>
-        <div class="defcon-row">
-          <div class="dc dc-green"><div class="dc-dot"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 82-2</div>
-          <div class="dc dc-red"><div class="dc-dot"></div>Defcon 2 &nbsp;·&nbsp; GPB 128</div>
-        </div>
-      </div>
-
-      <div class="group-card">
-        <div class="group-head">
-          <div class="card-ico ico-amber">👮</div>
-          <div style="flex:1">
-            <div class="card-name">Tenues Off — Officiers de ligne</div>
-            <div class="card-sub">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
-          </div>
-          <span class="badge badge-amber">Officier</span>
-        </div>
-        <div class="grades-row">
-          <span class="grade-pill">Off</span>
-          <span class="grade-pill">Off-I</span>
-          <span class="grade-pill">Off-II</span>
-          <span class="grade-pill">Off-III</span>
+      
+      <div class="sec-label">Officiers de terrain</div>
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-head">
+          <div class="card-id"><div class="card-ico ico-amber">👮</div><div><div class="card-name">Tenues Off — Officiers de ligne</div><div class="card-sub">POUR TOUS LES GRADES D'OFFICIERS</div></div></div>
         </div>
         <div class="chips-row">
           <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">599-7</span></div>
           <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
           <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-1</span></div>
-        </div>
-        <div class="defcon-row">
-          <div class="dc dc-green"><div class="dc-dot"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 82</div>
-          <div class="dc dc-red"><div class="dc-dot"></div>Defcon 2 &nbsp;·&nbsp; GPB 128</div>
-        </div>
-      </div>
-
-      <div class="sec-label">Grades Supérieurs & Commandement</div>
-
-      <div class="group-card">
-        <div class="group-head">
-          <div class="card-ico ico-teal">🛡️</div>
-          <div style="flex:1">
-            <div class="card-name">Tenues Sergent & Lieutenant</div>
-            <div class="card-sub">SUPERVISION TERRAIN</div>
-          </div>
-          <span class="badge badge-teal">Supérieur</span>
-        </div>
-        <div class="grades-row">
-          <span class="grade-pill">Sergeant</span>
-          <span class="grade-pill">Lieutenant</span>
-        </div>
-        <div class="chips-row">
-          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">768-0</span></div>
-          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-        </div>
-        <div class="defcon-row">
-          <div class="dc dc-green"><div class="dc-dot"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 128-1</div>
-          <div class="dc dc-red"><div class="dc-dot"></div>Defcon 2 &nbsp;·&nbsp; GPB 128</div>
-        </div>
-      </div>
-
-      <div class="cmd-card">
-        <div class="cmd-ico">👑</div>
-        <div>
-          <div class="cmd-title">Tenue Captain & Commandement</div>
-          <div class="cmd-body">Tenue blanche réglementaire (Chemisette)<br>Gilet par balle au choix selon la situation</div>
-          <div class="cmd-note">⚠️ Le commandement est autorisé à opérer en civil ou costume si la mission l'exige.</div>
         </div>
       </div>
     </div>
@@ -1070,75 +489,38 @@ body {
 
       <div class="alert danger">
         <span class="alert-icon">⚠️</span>
-        <span>L'utilisation d'une arme non autorisée pour votre grade entraînera une sanction disciplinaire immédiate. Vous ne devez sortir de l'armurerie que le matériel pour lequel vous êtes habilité.</span>
+        <span>L'utilisation d'une arme non autorisée pour votre grade entraînera une sanction disciplinaire immédiate.</span>
       </div>
 
       <div class="sec-label">Dotation par grade</div>
-
       <div class="cards-grid">
         <div class="card">
           <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-amber">🆕</div>
-            <div><div class="card-name">Recrue</div><div class="card-sub">ÉQUIPEMENT LÉGER</div></div></div>
+            <div class="card-id"><div class="card-ico ico-amber">🆕</div><div><div class="card-name">Recrue</div><div class="card-sub">ÉQUIPEMENT LÉGER</div></div></div>
           </div>
           <ul class="steps-list" style="margin-top: 10px; margin-bottom:0;">
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ <strong>Arme de poing</strong> (Combat Pistol)</div></div></li>
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ <strong>Taser</strong></div></div></li>
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Matraque (Nightstick)</div></div></li>
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Lampe torche & Menottes</div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-desc">✔️ <strong>Arme de poing</strong> (Combat Pistol)</div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-desc">✔️ <strong>Taser</strong> & Matraque</div></li>
           </ul>
         </div>
-
         <div class="card">
           <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-amber">👮</div>
-            <div><div class="card-name">Officier</div><div class="card-sub">LIGNE D'INTERVENTION</div></div></div>
+            <div class="card-id"><div class="card-ico ico-amber">👮</div><div><div class="card-name">Officier</div><div class="card-sub">LIGNE D'INTERVENTION</div></div></div>
           </div>
           <ul class="steps-list" style="margin-top: 10px; margin-bottom:0;">
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Équipement Recrue</div></div></li>
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ <strong>SMG</strong> (Mitraillette légère)</div></div></li>
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Fusil à pompe (Shotgun)</div></div></li>
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc" style="color:var(--dim)">❌ Pas de fusil d'assaut (AR)</div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-desc">✔️ Équipement Recrue</div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-desc">✔️ <strong>SMG</strong> (Mitraillette légère)</div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-desc">✔️ Fusil à pompe (Shotgun)</div></li>
           </ul>
         </div>
-
         <div class="card">
           <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-teal">🛡️</div>
-            <div><div class="card-name">Sergent & Lieutenant</div><div class="card-sub">ARMEMENT LOURD</div></div></div>
+            <div class="card-id"><div class="card-ico ico-teal">🛡️</div><div><div class="card-name">Sergent & Lieutenant</div><div class="card-sub">ARMEMENT LOURD</div></div></div>
           </div>
           <ul class="steps-list" style="margin-top: 10px; margin-bottom:0;">
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Équipement Officier</div></div></li>
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ <strong>Carbine Rifle</strong> (Fusil d'assaut)</div></div></li>
-            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Advanced Rifle</div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-desc">✔️ Équipement Officier</div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-desc">✔️ <strong>Fusil d'assaut</strong> (Carbine/Advanced)</div></li>
           </ul>
-        </div>
-      </div>
-
-      <div class="sec-label">Dotations Spéciales</div>
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-blue">🎯</div>
-            <div><div class="card-name">SWAT</div><div class="card-sub">TACTIQUE</div></div></div>
-          </div>
-          <div class="info-block" style="margin:0;">
-            ✔️ <strong>Sniper Rifle</strong> (Sur autorisation)<br>
-            ✔️ Fusil d'assaut lourd / MK2<br>
-            ✔️ Grenades fumigènes & Flashbangs<br>
-            <span style="color:var(--dim);font-size:12px;margin-top:5px;display:block;">* Uniquement en service actif SWAT.</span>
-          </div>
-        </div>
-
-        <div class="card" style="border-color: rgba(201,168,76,0.4);">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-red" style="border-color:var(--gold);color:var(--gold)">👑</div>
-            <div><div class="card-name" style="color:var(--gold2)">Capitaine & +</div><div class="card-sub">COMMANDEMENT</div></div></div>
-          </div>
-          <div class="info-block" style="margin:0; border-left-color: var(--gold)">
-            ✔️ <strong>Accès total à l'armurerie.</strong><br>
-            Peut débloquer des armes spécifiques pour une opération (ex: fusils de précision pour Officiers lors d'une surveillance).
-          </div>
         </div>
       </div>
     </div>
@@ -1155,59 +537,15 @@ body {
         <span class="alert-icon">🛑</span>
         <div>
           <strong>FORMATION HAUTE VITESSE OBLIGATOIRE</strong><br>
-          Il faut <strong>obligatoirement</strong> avoir passé et validé la formation "Haute Vitesse" avec un instructeur pour avoir l'autorisation de conduire les véhicules d'interception rapide (Buffalo, Scout, Charger). Tout agent surpris dans ces véhicules sans l'habilitation sera lourdement sanctionné.
+          Il faut <strong>obligatoirement</strong> avoir passé et validé la formation "Haute Vitesse" avec un instructeur pour avoir l'autorisation de conduire les véhicules d'interception rapide (Scout, Buffalo, etc.).
         </div>
       </div>
 
-      <div class="sec-label">Flotte LSPD (Du moins puissant au plus puissant)</div>
-      
+      <div class="sec-label">Flotte LSPD</div>
       <div class="cards-grid-3">
-        <div class="rule-card">
-          <div class="rule-num">1</div>
-          <div class="rule-text"><strong>Stanier / Victoria</strong><br><span style="color:var(--dim);font-size:12px;">Standard. Pour Recrues et Officiers.</span></div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">2</div>
-          <div class="rule-text"><strong>Police Cruiser (Torus)</strong><br><span style="color:var(--dim);font-size:12px;">Officiers confirmés. Polyvalent.</span></div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">3</div>
-          <div class="rule-text"><strong>Riot / Fourgon</strong><br><span style="color:var(--dim);font-size:12px;">Transport de suspects ou SWAT.</span></div>
-        </div>
-        <div class="rule-card" style="border-color:var(--red1)">
-          <div class="rule-num" style="color:var(--red2)">4</div>
-          <div class="rule-text"><strong>Scout (SUV Rapide)</strong><br><span style="color:var(--red2);font-size:12px;font-weight:700;">Habilitation Haute Vitesse Requise</span></div>
-        </div>
-        <div class="rule-card" style="border-color:var(--red1)">
-          <div class="rule-num" style="color:var(--red2)">5</div>
-          <div class="rule-text"><strong>Buffalo (Intercepteur)</strong><br><span style="color:var(--red2);font-size:12px;font-weight:700;">Habilitation Haute Vitesse Requise</span></div>
-        </div>
-        <div class="rule-card" style="border-color:var(--gold)">
-          <div class="rule-num" style="color:var(--gold)">👑</div>
-          <div class="rule-text"><strong>Unmarked / Banalisés</strong><br><span style="color:var(--gold);font-size:12px;">Réservés aux enquêtes et Commandement. Captain & + ont accès à l'intégralité du garage.</span></div>
-        </div>
-      </div>
-
-      <div class="sec-label">Règles de Patrouille</div>
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-blue">👥</div>
-            <div><div class="card-name">Binôme standard</div></div></div>
-          </div>
-          <div class="info-block success" style="margin:0">
-            La patrouille s'effectue à <strong>2 agents par véhicule</strong> dans la configuration standard. Le passager gère la radio.
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-amber">👤</div>
-            <div><div class="card-name">Patrouille solo</div></div></div>
-          </div>
-          <div class="info-block warn" style="margin:0">
-            Autorisée <strong>uniquement si aucune autre option n'est possible</strong>. Annonce radio obligatoire.
-          </div>
-        </div>
+        <div class="rule-card"><div class="rule-num">1</div><div class="rule-text"><strong>Stanier / Victoria</strong><br><span style="color:var(--dim);font-size:12px;">Standard. Pour Recrues et Officiers.</span></div></div>
+        <div class="rule-card"><div class="rule-num">2</div><div class="rule-text"><strong>Police Cruiser</strong><br><span style="color:var(--dim);font-size:12px;">Officiers confirmés. Polyvalent.</span></div></div>
+        <div class="rule-card" style="border-color:var(--red1)"><div class="rule-num" style="color:var(--red2)">3</div><div class="rule-text"><strong>Scout / Buffalo</strong><br><span style="color:var(--red2);font-size:12px;font-weight:700;">Habilitation Haute Vitesse Requise</span></div></div>
       </div>
     </div>
 
@@ -1219,51 +557,18 @@ body {
         </div>
       </div>
 
-      <div class="info-block">
-        Lors de vos contrôles, vous serez amenés à vérifier la validité des documents officiels des citoyens. Confisquer une arme légale à un citoyen en règle est une faute grave qui peut entraîner une plainte au tribunal.
-      </div>
-
-      <div class="sec-label">Liste des Permis</div>
-
       <div class="cards-grid">
         <div class="card">
           <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-blue">🚗</div>
-            <div><div class="card-name">Permis de Conduire</div><div class="card-sub">VOITURE / MOTO / CAMION</div></div></div>
+            <div class="card-id"><div class="card-ico ico-green">🔫</div><div><div class="card-name">PPA Léger</div><div class="card-sub">CIVIL EN RÈGLE</div></div></div>
           </div>
-          <div class="info-block" style="margin:0">
-            Doit être présenté lors de tout contrôle routier. S'il est invalide ou absent : amende et mise en fourrière du véhicule.
-          </div>
+          <div class="info-block success" style="margin:0">Autorise <strong>une arme de poing classique</strong>. Ne doit pas être visible.</div>
         </div>
-        
         <div class="card">
           <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-green">🔫</div>
-            <div><div class="card-name">PPA Léger</div><div class="card-sub">PERMIS DE PORT D'ARME (CIVIL)</div></div></div>
+            <div class="card-id"><div class="card-ico ico-red">⚠️</div><div><div class="card-name">PPA Lourd</div><div class="card-sub">ARMES D'ASSAUT</div></div></div>
           </div>
-          <div class="info-block success" style="margin:0">
-            Autorise le civil à porter <strong>une arme de poing classique</strong> (Pétoire, Pistolet de combat). L'arme ne doit pas être visible (holster ou sac). Tout usage abusif annule le PPA.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-red">⚠️</div>
-            <div><div class="card-name">PPA Lourd</div><div class="card-sub">ARMES D'ASSAUT / SMG</div></div></div>
-          </div>
-          <div class="info-block danger" style="margin:0">
-            <strong>Strictement illégal pour les civils.</strong> Ce permis (s'il existe) est réservé aux sociétés de sécurité privées enregistrées (ex: Gruppe6) pour les convoyages de fonds.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-amber">🦌</div>
-            <div><div class="card-name">Permis de Chasse</div><div class="card-sub">FUSIL À POMPE / SNIPER DE CHASSE</div></div></div>
-          </div>
-          <div class="info-block warn" style="margin:0">
-            Valable <strong>uniquement en zone rurale/forêt</strong>. Un civil se promenant en ville avec un fusil de chasse dans le dos sera immédiatement arrêté, même avec le permis.
-          </div>
+          <div class="info-block danger" style="margin:0"><strong>Strictement illégal pour les civils.</strong> Réservé aux convoyeurs de fonds professionnels.</div>
         </div>
       </div>
     </div>
@@ -1276,17 +581,12 @@ body {
         </div>
       </div>
 
-      <div class="info-block">
-        Le DEFCON (Defense Condition) est le système de niveaux d'alerte opérationnels. Chaque niveau implique des règles d'équipement spécifiques, notamment le port du gilet pare-balles (GPB).
-      </div>
-
       <div class="card" style="padding:0; overflow:hidden;">
         <table class="defcon-table">
           <thead>
             <tr>
               <th>Niveau</th>
               <th>Couleur</th>
-              <th>Désignation</th>
               <th>Contexte</th>
               <th>Équipement</th>
             </tr>
@@ -1295,37 +595,20 @@ body {
             <tr>
               <td><span class="dc-level"><span style="color:#97C459;font-size:18px">●</span> DEFCON 5</span></td>
               <td><span style="color:#97C459;font-family:'Share Tech Mono',monospace;font-size:12px">VERT</span></td>
-              <td style="color:#c5d8ee;font-family:'Share Tech Mono',monospace;font-size:12px">Normal</td>
-              <td style="color:#7a9cbf;font-size:13px">Aucune menace connue.</td>
-              <td style="color:#97C459;font-family:'Share Tech Mono',monospace;font-size:12px">GPB léger selon grade</td>
-            </tr>
-            <tr>
-              <td><span class="dc-level"><span style="color:#97C459;font-size:18px">●</span> DEFCON 4</span></td>
-              <td><span style="color:#97C459;font-family:'Share Tech Mono',monospace;font-size:12px">VERT</span></td>
-              <td style="color:#c5d8ee;font-family:'Share Tech Mono',monospace;font-size:12px">Élevé</td>
-              <td style="color:#7a9cbf;font-size:13px">Tension légère signalée.</td>
+              <td style="color:#7a9cbf;font-size:13px">Patrouille normale. Aucune menace connue.</td>
               <td style="color:#97C459;font-family:'Share Tech Mono',monospace;font-size:12px">GPB léger selon grade</td>
             </tr>
             <tr>
               <td><span class="dc-level"><span style="color:#FAC775;font-size:18px">●</span> DEFCON 3</span></td>
               <td><span style="color:#FAC775;font-family:'Share Tech Mono',monospace;font-size:12px">ORANGE</span></td>
-              <td style="color:#c5d8ee;font-family:'Share Tech Mono',monospace;font-size:12px">Vigilance</td>
-              <td style="color:#7a9cbf;font-size:13px">Menace active.</td>
+              <td style="color:#7a9cbf;font-size:13px">Menace active (Braquage mineur, fuite).</td>
               <td style="color:#FAC775;font-family:'Share Tech Mono',monospace;font-size:12px">GPB réglementaire grade</td>
             </tr>
             <tr>
               <td><span class="dc-level"><span style="color:#E24B4A;font-size:18px">●</span> DEFCON 2</span></td>
               <td><span style="color:#E24B4A;font-family:'Share Tech Mono',monospace;font-size:12px">ROUGE</span></td>
-              <td style="color:#c5d8ee;font-family:'Share Tech Mono',monospace;font-size:12px">Critique</td>
-              <td style="color:#7a9cbf;font-size:13px">Braquage, fusillade.</td>
+              <td style="color:#7a9cbf;font-size:13px">Tirs nourris, braquage de banque, SWAT déployé.</td>
               <td style="color:#F09595;font-family:'Share Tech Mono',monospace;font-size:12px">GPB 128 obligatoire</td>
-            </tr>
-            <tr>
-              <td><span class="dc-level"><span style="color:#E24B4A;font-size:18px">●</span> DEFCON 1</span></td>
-              <td><span style="color:#E24B4A;font-family:'Share Tech Mono',monospace;font-size:12px">ROUGE</span></td>
-              <td style="color:#c5d8ee;font-family:'Share Tech Mono',monospace;font-size:12px">Maximum</td>
-              <td style="color:#7a9cbf;font-size:13px">Prise d'otage, attentat.</td>
-              <td style="color:#F09595;font-family:'Share Tech Mono',monospace;font-size:12px">GPB 128 + SWAT</td>
             </tr>
           </tbody>
         </table>
@@ -1336,26 +619,59 @@ body {
       <div class="topbar">
         <div class="topbar-left">
           <div class="page-label">Manuel Rookie</div>
-          <div class="page-title">Radio <span>&amp; Codes</span></div>
+          <div class="page-title">Radio & <span>Indicatifs</span></div>
         </div>
       </div>
 
       <div class="info-block warn">
-        La radio est l'artère vitale de toute opération. <strong>Restez concis et professionnels</strong>. Les codes 10 permettent de faire passer une information vitale en 2 secondes.
+        Toutes les communications doivent débuter par votre <strong>Indicatif d'Unité (Callsign)</strong> suivi de votre numéro d'unité (Ex: <em>"1-Adam-12 pour Dispatch"</em>).
+      </div>
+
+      <div class="sec-label">Indicatifs d'Unités (Callsigns)</div>
+      <div class="cards-grid-3">
+        <div class="rule-card">
+          <div class="rule-num" style="color:var(--blue2)">A</div>
+          <div class="rule-text"><strong>ADAM</strong><br><span style="color:var(--dim);font-size:12px;">Unité de patrouille standard composée de <strong>2 agents</strong> (binôme).</span></div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num" style="color:var(--gold3)">L</div>
+          <div class="rule-text"><strong>LINCOLN</strong><br><span style="color:var(--dim);font-size:12px;">Unité de patrouille avec <strong>1 seul agent</strong> (Solo). Sur autorisation.</span></div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num" style="color:var(--teal2)">T</div>
+          <div class="rule-text"><strong>TANGO</strong><br><span style="color:var(--dim);font-size:12px;">Unité d'intervention trafic ou véhicule banalisé. <em>(1 seul agent)</em></span></div>
+        </div>
+        <div class="rule-card" style="border-color: rgba(93, 202, 165, 0.4)">
+          <div class="rule-num" style="color:var(--teal2)">T+1</div>
+          <div class="rule-text"><strong>TANGO + 1</strong><br><span style="color:var(--dim);font-size:12px;">Unité Tango <strong>avec passager</strong> (ex: stagiaire ou second agent).</span></div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num" style="color:var(--blue3)">M</div>
+          <div class="rule-text"><strong>MARY</strong><br><span style="color:var(--dim);font-size:12px;">Unité d'intervention motocycliste (2 roues).</span></div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num" style="color:var(--red2)">D</div>
+          <div class="rule-text"><strong>DAVID</strong><br><span style="color:var(--dim);font-size:12px;">Unité tactique <strong>SWAT</strong> / Forces Spéciales.</span></div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num" style="color:var(--green2)">E</div>
+          <div class="rule-text"><strong>EDWARD</strong><br><span style="color:var(--dim);font-size:12px;">Unité de soutien aérien (Hélicoptère / Air Unit).</span></div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num" style="color:var(--gold)">C</div>
+          <div class="rule-text"><strong>CHARLES</strong><br><span style="color:var(--dim);font-size:12px;">Unité de commandement (Capitaine, Chef).</span></div>
+        </div>
       </div>
 
       <div class="sec-label">Codes 10 Essentiels</div>
       <div class="cards-grid-3">
-        <div class="rule-card"><div class="rule-num" style="color:var(--blue3)">10-4</div><div class="rule-text">Reçu / Compris</div></div>
-        <div class="rule-card"><div class="rule-num" style="color:var(--blue3)">10-8</div><div class="rule-text">Prise de Service</div></div>
-        <div class="rule-card"><div class="rule-num" style="color:var(--dim)">10-7</div><div class="rule-text">Fin de Service</div></div>
-        <div class="rule-card"><div class="rule-num" style="color:var(--gold)">10-20</div><div class="rule-text">Localisation / Position</div></div>
-        <div class="rule-card"><div class="rule-num" style="color:var(--gold)">10-32</div><div class="rule-text">Demande de Renfort (Standard)</div></div>
-        <div class="rule-card"><div class="rule-num" style="color:var(--red2)">10-70</div><div class="rule-text">Renfort Urgence Absolue</div></div>
+        <div class="rule-card"><div class="rule-num">10-4</div><div class="rule-text">Reçu / Compris</div></div>
+        <div class="rule-card"><div class="rule-num">10-8</div><div class="rule-text">Prise de Service</div></div>
+        <div class="rule-card"><div class="rule-num">10-20</div><div class="rule-text">Position actuelle</div></div>
+        <div class="rule-card"><div class="rule-num">10-32</div><div class="rule-text">Demande de Renfort (Standard)</div></div>
         <div class="rule-card"><div class="rule-num" style="color:var(--red1);font-weight:900">10-13</div><div class="rule-text"><strong>OFFICIER À TERRE</strong></div></div>
         <div class="rule-card"><div class="rule-num" style="color:var(--red1)">10-10</div><div class="rule-text">Tirs en cours</div></div>
-        <div class="rule-card"><div class="rule-num" style="color:var(--gold)">10-80</div><div class="rule-text">Poursuite véhicule</div></div>
-        <div class="rule-card"><div class="rule-num" style="color:var(--teal2)">10-52</div><div class="rule-text">Demande d'Ambulance (EMS)</div></div>
+        <div class="rule-card"><div class="rule-num">10-80</div><div class="rule-text">Poursuite véhicule</div></div>
       </div>
     </div>
 
@@ -1371,8 +687,6 @@ body {
         <span class="alert-icon">🚨</span>
         <span>Une arrestation non conforme peut entraîner la libération du suspect pour vice de procédure. Suivez les étapes à la lettre.</span>
       </div>
-
-      <div class="sec-label">Étapes de l'arrestation</div>
 
       <div class="group-card">
         <ul class="steps-list">
@@ -1401,14 +715,7 @@ body {
             <div class="step-num" style="background:rgba(239,159,39,0.2);color:var(--gold3);border-color:var(--gold)">4</div>
             <div class="step-content">
               <div class="step-title" style="color:var(--gold2)">Droit à l'Avocat (Règle des 10 Minutes)</div>
-              <div class="step-desc">Si le suspect demande un avocat, le dispatch contacte le barreau. <strong>Si aucun avocat ne se présente sous 10 minutes</strong> (délai RP de réponse), l'interrogatoire et la procédure pénale se poursuivent légalement sans lui.</div>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">5</div>
-            <div class="step-content">
-              <div class="step-title">Transport & Fouille poussée</div>
-              <div class="step-desc">Conduite au poste. Fouille complète, saisie des objets illégaux. Mise en cellule.</div>
+              <div class="step-desc">Si le suspect demande un avocat, le dispatch contacte le barreau. <strong>Si aucun avocat ne se présente sous 10 minutes</strong>, l'interrogatoire et la procédure pénale se poursuivent légalement sans lui.</div>
             </div>
           </li>
         </ul>
@@ -1434,7 +741,6 @@ body {
             Si vous n'avez pas les moyens de vous en payer un, il vous en sera désigné un d'office.<br>
             Comprenez-vous ces droits ?"
           </div>
-          <div class="cmd-note" style="color: var(--dim);">La réponse du suspect doit être notée. Si le suspect garde le silence, c'est son droit.</div>
         </div>
       </div>
     </div>
@@ -1449,16 +755,16 @@ body {
       
       <div class="sec-label">Grades de terrain</div>
       <div class="cards-grid-3">
-        <div class="rule-card"><div class="rule-num">R</div><div class="rule-text"><strong>Recrue</strong> — Sous supervision constante.</div></div>
-        <div class="rule-card"><div class="rule-num">Off</div><div class="rule-text"><strong>Officer I / II / III</strong> — Officiers autonomes.</div></div>
-        <div class="rule-card"><div class="rule-num">SLO</div><div class="rule-text"><strong>Senior Line Officer</strong> — Référent terrain.</div></div>
+        <div class="rule-card"><div class="rule-num">R</div><div class="rule-text"><strong>Recrue</strong></div></div>
+        <div class="rule-card"><div class="rule-num">Off</div><div class="rule-text"><strong>Officer I / II / III</strong></div></div>
+        <div class="rule-card"><div class="rule-num">SLO</div><div class="rule-text"><strong>Senior Line Officer</strong></div></div>
       </div>
 
       <div class="sec-label">Commandement</div>
       <div class="cards-grid-3">
-        <div class="rule-card"><div class="rule-num">SGT</div><div class="rule-text"><strong>Sergeant I / II / III</strong> — Chef de brigade.</div></div>
-        <div class="rule-card"><div class="rule-num">LT</div><div class="rule-text"><strong>Lieutenant</strong> — Sup. des opérations.</div></div>
-        <div class="rule-card"><div class="rule-num">CPT</div><div class="rule-text"><strong>Captain</strong> — Direction de division.</div></div>
+        <div class="rule-card"><div class="rule-num">SGT</div><div class="rule-text"><strong>Sergeant I / II / III</strong></div></div>
+        <div class="rule-card"><div class="rule-num">LT</div><div class="rule-text"><strong>Lieutenant</strong></div></div>
+        <div class="rule-card"><div class="rule-num">CPT</div><div class="rule-text"><strong>Captain</strong></div></div>
       </div>
     </div>
 
@@ -1474,23 +780,20 @@ body {
         <div class="card">
           <div class="card-head">
             <div class="card-id"><div class="card-ico ico-blue">🐕</div><div><div class="card-name">K9</div></div></div>
-            <span class="badge badge-blue">Division</span>
           </div>
           <div class="info-block" style="margin-bottom:0">Pistage, détection de stupéfiants avec chien policier.</div>
         </div>
         <div class="card">
           <div class="card-head">
             <div class="card-id"><div class="card-ico ico-blue">✈️</div><div><div class="card-name">Air Unit</div></div></div>
-            <span class="badge badge-blue">Division</span>
           </div>
           <div class="info-block" style="margin-bottom:0">Surveillance aérienne. Habilitation pilotage obligatoire.</div>
         </div>
         <div class="card">
           <div class="card-head">
             <div class="card-id"><div class="card-ico ico-blue">🎯</div><div><div class="card-name">SWAT</div></div></div>
-            <span class="badge badge-blue">Division</span>
           </div>
-          <div class="info-block" style="margin-bottom:0">Intervention tactique, braquage, haut risque (DEFCON 2/1).</div>
+          <div class="info-block" style="margin-bottom:0">Intervention tactique, braquage, haut risque.</div>
         </div>
       </div>
     </div>
@@ -1503,15 +806,10 @@ body {
         </div>
       </div>
 
-      <div class="hero-banner" style="border-top-color: var(--red1);">
-        <div class="hero-h">L'agent LSPD incarne la loi</div>
-        <div class="hero-p">Le port de l'insigne implique un engagement total envers les citoyens de Los Santos.</div>
-      </div>
-
       <div class="sec-label">Obligations RP</div>
       <div class="rule-card"><div class="rule-num">01</div><div class="rule-text"><strong>Respect de la hiérarchie</strong> — Les ordres des supérieurs sont exécutés. Aucun refus d'obtempérer en interne.</div></div>
       <div class="rule-card"><div class="rule-num">02</div><div class="rule-text"><strong>Usage proportionné de la force</strong> — L'arme létale n'est utilisée qu'en cas de danger de mort imminent pour l'agent ou un civil.</div></div>
-      <div class="rule-card"><div class="rule-num">03</div><div class="rule-text"><strong>Intégrité absolue</strong> — Aucune corruption. Ne jamais collaborer avec des criminels. Sanction : Wipe du personnage policier.</div></div>
+      <div class="rule-card"><div class="rule-num">03</div><div class="rule-text"><strong>Intégrité absolue</strong> — Aucune corruption. Ne jamais collaborer avec des criminels.</div></div>
     </div>
 
     <div class="footer">
