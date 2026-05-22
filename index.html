@@ -1,748 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LSPD NightCity FA — Guide des Tenues</title>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'Rajdhani', sans-serif;
-  background-color: #06111f;
-  background-image:
-    radial-gradient(ellipse at 20% 20%, rgba(21,56,100,0.45) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 80%, rgba(10,30,60,0.4) 0%, transparent 60%),
-    url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Los_Santos_Police_Department_Logo.png/240px-Los_Santos_Police_Department_Logo.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 520px 520px;
-  background-attachment: fixed;
-  color: #e8edf5;
-  min-height: 100vh;
-  padding: 40px 20px 80px;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 15%, rgba(12,68,124,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 85%, rgba(4,44,83,0.22) 0%, transparent 55%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.page {
-  max-width: 860px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-/* ── HEADER ── */
-.doc-header {
-  background: rgba(6,17,31,0.82);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(53,110,180,0.35);
-  border-top: 3px solid #c9a84c;
-  border-radius: 14px;
-  padding: 36px 40px 30px;
-  margin-bottom: 28px;
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  position: relative;
-  overflow: hidden;
-}
-
-.header-logo {
-  width: 88px;
-  height: 88px;
-  flex-shrink: 0;
-  object-fit: contain;
-  filter: drop-shadow(0 0 12px rgba(201,168,76,0.4));
-}
-
-.header-text { flex: 1; }
-
-.server-tag {
-  display: inline-block;
-  background: rgba(201,168,76,0.15);
-  border: 1px solid rgba(201,168,76,0.4);
-  color: #c9a84c;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 11px;
-  padding: 3px 12px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-.doc-header h1 {
-  font-size: 30px;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 1px;
-  line-height: 1.1;
-  margin-bottom: 4px;
-}
-
-.doc-header h2 {
-  font-size: 16px;
-  font-weight: 400;
-  color: #7a9cbf;
-  font-family: 'Share Tech Mono', monospace;
-  letter-spacing: 1px;
-  margin-bottom: 14px;
-}
-
-.header-divider {
-  height: 1px;
-  background: linear-gradient(90deg, rgba(201,168,76,0.8) 0%, rgba(232,208,138,0.6) 50%, rgba(201,168,76,0.2) 100%);
-  margin-bottom: 12px;
-}
-
-.header-meta {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.meta-pill {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: #5a7a9a;
-  font-family: 'Share Tech Mono', monospace;
-}
-
-.meta-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #c9a84c;
-}
-
-/* ── NAVIGATION ── */
-.nav-bar {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.nav-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 18px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.04);
-  color: #7a9cbf;
-  font-size: 13px;
-  font-weight: 600;
-  font-family: 'Rajdhani', sans-serif;
-  cursor: pointer;
-  transition: all 0.18s ease;
-  letter-spacing: 0.5px;
-}
-
-.nav-btn:hover {
-  background: rgba(255,255,255,0.08);
-  color: #c5d8ee;
-  border-color: rgba(255,255,255,0.15);
-}
-
-.nav-btn.active {
-  border-color: currentColor;
-  color: #fff;
-}
-
-.nav-btn.active.nb-blue  { background: rgba(21,95,165,0.25); border-color: #378ADD; color: #85B7EB; }
-.nav-btn.active.nb-amber { background: rgba(186,117,23,0.2);  border-color: #EF9F27; color: #FAC775; }
-.nav-btn.active.nb-teal  { background: rgba(15,110,86,0.2);   border-color: #1D9E75; color: #5DCAA5; }
-.nav-btn.active.nb-red   { background: rgba(163,45,45,0.2);   border-color: #E24B4A; color: #F09595; }
-
-.nav-icon {
-  width: 18px; height: 18px;
-  opacity: 0.8;
-}
-
-/* ── SECTIONS ── */
-.section { display: none; }
-.section.visible { display: block; }
-
-.section-label {
-  font-size: 11px;
-  font-weight: 600;
-  color: #4a6a8a;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-family: 'Share Tech Mono', monospace;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.section-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: rgba(255,255,255,0.07);
-}
-
-/* ── CARDS ── */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.card {
-  background: rgba(10,22,42,0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 18px 20px;
-  transition: border-color 0.18s;
-}
-
-.card:hover {
-  border-color: rgba(255,255,255,0.16);
-}
-
-.card-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.card-identity {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.card-ico {
-  width: 36px; height: 36px;
-  border-radius: 9px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  font-size: 18px;
-}
-
-.ico-blue  { background: rgba(21,95,165,0.25); color: #85B7EB; border: 1px solid rgba(55,138,221,0.3); }
-.ico-amber { background: rgba(186,117,23,0.2);  color: #FAC775; border: 1px solid rgba(239,159,39,0.3); }
-.ico-teal  { background: rgba(15,110,86,0.2);   color: #5DCAA5; border: 1px solid rgba(29,158,117,0.3); }
-.ico-red   { background: rgba(163,45,45,0.2);   color: #F09595; border: 1px solid rgba(226,75,74,0.3); }
-
-.card-name  { font-size: 16px; font-weight: 700; color: #e8edf5; line-height: 1.2; }
-.card-role  { font-size: 12px; color: #5a7a9a; margin-top: 2px; font-family: 'Share Tech Mono', monospace; }
-
-.badge {
-  font-size: 10px;
-  font-family: 'Share Tech Mono', monospace;
-  padding: 3px 9px;
-  border-radius: 4px;
-  white-space: nowrap;
-  letter-spacing: 0.5px;
-  flex-shrink: 0;
-}
-
-.badge-blue  { background: rgba(21,95,165,0.2); color: #85B7EB; border: 1px solid rgba(55,138,221,0.25); }
-.badge-amber { background: rgba(186,117,23,0.2); color: #FAC775; border: 1px solid rgba(239,159,39,0.25); }
-.badge-teal  { background: rgba(15,110,86,0.2);  color: #5DCAA5; border: 1px solid rgba(29,158,117,0.25); }
-.badge-red   { background: rgba(163,45,45,0.2);  color: #F09595; border: 1px solid rgba(226,75,74,0.25); }
-
-/* ── ITEMS CHIPS ── */
-.items-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 12px;
-}
-
-.chip {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 8px;
-  padding: 6px 12px;
-  min-width: 60px;
-}
-
-.chip-lbl { font-size: 10px; color: #4a6a8a; margin-bottom: 3px; font-family: 'Share Tech Mono', monospace; }
-.chip-val { font-size: 14px; font-weight: 700; color: #c5d8ee; font-family: 'Share Tech Mono', monospace; }
-
-/* ── DEFCON ── */
-.defcon-row {
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.dc {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12px;
-  font-family: 'Share Tech Mono', monospace;
-  padding: 5px 12px;
-  border-radius: 6px;
-  border: 1px solid;
-  flex: 1;
-  min-width: 160px;
-}
-
-.dc-icon {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.dc-green  { background: rgba(39,80,10,0.3);   border-color: rgba(99,153,34,0.4); color: #97C459; }
-.dc-green  .dc-icon  { background: #639922; }
-.dc-orange { background: rgba(99,56,6,0.3);    border-color: rgba(239,159,39,0.4); color: #FAC775; }
-.dc-orange .dc-icon  { background: #EF9F27; }
-.dc-red    { background: rgba(121,31,31,0.3);  border-color: rgba(226,75,74,0.4); color: #F09595; }
-.dc-red    .dc-icon  { background: #E24B4A; }
-.dc-gray   { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); color: #7a9cbf; }
-.dc-gray   .dc-icon  { background: #5F5E5A; }
-
-/* ── GROUP CARD ── */
-.group-card {
-  background: rgba(10,22,42,0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 18px 20px;
-  margin-bottom: 12px;
-  transition: border-color 0.18s;
-}
-
-.group-card:hover {
-  border-color: rgba(255,255,255,0.16);
-}
-
-.group-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.grades-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 14px;
-}
-
-.grade-pill {
-  font-size: 12px;
-  font-family: 'Share Tech Mono', monospace;
-  padding: 4px 12px;
-  border-radius: 5px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: #7a9cbf;
-}
-
-/* ── COMMANDEMENT ── */
-.cmd-card {
-  background: rgba(60,15,15,0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(226,75,74,0.25);
-  border-top: 2px solid rgba(201,168,76,0.6);
-  border-radius: 12px;
-  padding: 24px;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.cmd-icon {
-  font-size: 32px;
-  flex-shrink: 0;
-  line-height: 1;
-}
-
-.cmd-title { font-size: 18px; font-weight: 700; color: #e8d08a; margin-bottom: 6px; }
-.cmd-detail { font-size: 14px; color: #c5a0a0; font-family: 'Share Tech Mono', monospace; line-height: 1.8; }
-.cmd-note   { font-size: 12px; color: #7a4a4a; margin-top: 8px; font-family: 'Share Tech Mono', monospace; }
-
-/* ── FOOTER ── */
-.doc-footer {
-  margin-top: 48px;
-  text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-
-.footer-logo {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  opacity: 0.3;
-  margin-bottom: 10px;
-}
-
-.footer-text {
-  font-size: 11px;
-  color: #2a4a6a;
-  font-family: 'Share Tech Mono', monospace;
-  letter-spacing: 2px;
-}
-</style>
-</head>
-<body>
-
-<div class="page">
-
-  <!-- ══ HEADER ══ -->
-  <div class="doc-header">
-    <img class="header-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Los_Santos_Police_Department_Logo.png/240px-Los_Santos_Police_Department_Logo.png"
-      alt="Logo LSPD">
-    <div class="header-text">
-      <div class="server-tag">SERVEUR — NIGHTCITY FA</div>
-      <h1>Los Santos Police Department</h1>
-      <h2>GUIDE DES TENUES — RÉFÉRENCE OPÉRATIONNELLE</h2>
-      <div class="header-divider"></div>
-      <div class="header-meta">
-        <div class="meta-pill"><div class="meta-dot"></div>Usage interne LSPD</div>
-        <div class="meta-pill"><div class="meta-dot"></div>NightCity FA</div>
-        <div class="meta-pill"><div class="meta-dot"></div>Tous grades</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ NAVIGATION ══ -->
-  <div class="nav-bar">
-    <button class="nav-btn active nb-blue" onclick="show('special',this,'nb-blue')">
-      ⚡ Unités spéciales
-    </button>
-    <button class="nav-btn" onclick="show('officiers',this,'nb-amber')">
-      👮 Officiers
-    </button>
-    <button class="nav-btn" onclick="show('superieurs',this,'nb-teal')">
-      ⭐ Grades supérieurs
-    </button>
-    <button class="nav-btn" onclick="show('commandement',this,'nb-red')">
-      👑 Commandement
-    </button>
-  </div>
-
-  <!-- ══ UNITÉS SPÉCIALES ══ -->
-  <div class="section visible" id="sec-special">
-    <div class="section-label">Unités spéciales</div>
-    <div class="cards-grid">
-
-      <div class="card">
-        <div class="card-top">
-          <div class="card-identity">
-            <div class="card-ico ico-blue">🐕</div>
-            <div>
-              <div class="card-name">K9</div>
-              <div class="card-role">UNITÉ CYNOPHILE</div>
-            </div>
-          </div>
-          <span class="badge badge-blue">Spéciale</span>
-        </div>
-        <div class="items-row">
-          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">575-1</span></div>
-          <div class="chip"><span class="chip-lbl">Bras</span><span class="chip-val">20</span></div>
-          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">334</span></div>
-          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-          <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">207</span></div>
-          <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">133</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div class="card-identity">
-            <div class="card-ico ico-blue">✈️</div>
-            <div>
-              <div class="card-name">ASD Air Unit</div>
-              <div class="card-role">UNITÉ AÉRIENNE</div>
-            </div>
-          </div>
-          <span class="badge badge-blue">Spéciale</span>
-        </div>
-        <div class="items-row">
-          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">579</span></div>
-          <div class="chip"><span class="chip-lbl">Bras</span><span class="chip-val">21</span></div>
-          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">214</span></div>
-          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-          <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">198</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div class="card-identity">
-            <div class="card-ico ico-blue">🎯</div>
-            <div>
-              <div class="card-name">SWAT</div>
-              <div class="card-role">INTERVENTION TACTIQUE</div>
-            </div>
-          </div>
-          <span class="badge badge-blue">Spéciale</span>
-        </div>
-        <div class="items-row">
-          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">155</span></div>
-          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">757</span></div>
-          <div class="chip"><span class="chip-lbl">Bras</span><span class="chip-val">26</span></div>
-          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">333</span></div>
-          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-          <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">92</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <div class="card-identity">
-            <div class="card-ico ico-blue">⚔️</div>
-            <div>
-              <div class="card-name">Tenue Decone 1</div>
-              <div class="card-role">OPÉRATIONS SPÉCIALES</div>
-            </div>
-          </div>
-          <span class="badge badge-blue">Spéciale</span>
-        </div>
-        <div class="items-row">
-          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">773</span></div>
-          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">333</span></div>
-          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-          <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">128</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ OFFICIERS ══ -->
-  <div class="section" id="sec-officiers">
-    <div class="section-label">Officiers</div>
-
-    <div class="card" style="margin-bottom:12px">
-      <div class="card-top">
-        <div class="card-identity">
-          <div class="card-ico ico-amber">🆕</div>
-          <div>
-            <div class="card-name">Tenue R</div>
-            <div class="card-role">RECRUE</div>
-          </div>
-        </div>
-        <span class="badge badge-amber">Officier</span>
-      </div>
-      <div class="items-row">
-        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">600-4</span></div>
-        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-13</span></div>
-      </div>
-      <div class="defcon-row">
-        <div class="dc dc-green"><div class="dc-icon"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 82-2</div>
-        <div class="dc dc-red"><div class="dc-icon"></div>Defcon 2 &nbsp;·&nbsp; GPB 128</div>
-      </div>
-    </div>
-
-    <div class="group-card">
-      <div class="group-top">
-        <div class="card-ico ico-amber">👮</div>
-        <div style="flex:1">
-          <div class="card-name">Tenues Off</div>
-          <div class="card-role">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
-        </div>
-        <span class="badge badge-amber">Officier</span>
-      </div>
-      <div class="grades-row">
-        <span class="grade-pill">Off</span>
-        <span class="grade-pill">Off-I</span>
-        <span class="grade-pill">Off-II</span>
-        <span class="grade-pill">Off-III</span>
-      </div>
-      <div class="items-row">
-        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">599-7</span></div>
-        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-1</span></div>
-      </div>
-      <div class="defcon-row">
-        <div class="dc dc-green"><div class="dc-icon"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 82</div>
-        <div class="dc dc-red"><div class="dc-icon"></div>Defcon 2 &nbsp;·&nbsp; GPB 128</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-top">
-        <div class="card-identity">
-          <div class="card-ico ico-amber">✅</div>
-          <div>
-            <div class="card-name">Tenue SLO</div>
-            <div class="card-role">SENIOR LINE OFFICER</div>
-          </div>
-        </div>
-        <span class="badge badge-amber">Officier</span>
-      </div>
-      <div class="items-row">
-        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">599-7</span></div>
-        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-2</span></div>
-      </div>
-      <div class="defcon-row">
-        <div class="dc dc-green"><div class="dc-icon"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 114</div>
-        <div class="dc dc-red"><div class="dc-icon"></div>Defcon 2-1 &nbsp;·&nbsp; GPB 128</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ GRADES SUPÉRIEURS ══ -->
-  <div class="section" id="sec-superieurs">
-    <div class="section-label">Grades supérieurs</div>
-
-    <div class="group-card">
-      <div class="group-top">
-        <div class="card-ico ico-teal">🛡️</div>
-        <div style="flex:1">
-          <div class="card-name">Tenues SRG</div>
-          <div class="card-role">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
-        </div>
-        <span class="badge badge-teal">Supérieur</span>
-      </div>
-      <div class="grades-row">
-        <span class="grade-pill">SRG-I</span>
-        <span class="grade-pill">SRG-II</span>
-        <span class="grade-pill">SRG-III</span>
-      </div>
-      <div class="items-row">
-        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">768-0</span></div>
-        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-4</span></div>
-      </div>
-      <div class="defcon-row">
-        <div class="dc dc-green"><div class="dc-icon"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 128-1</div>
-        <div class="dc dc-red"><div class="dc-icon"></div>Defcon 2 &nbsp;·&nbsp; GPB 128</div>
-      </div>
-    </div>
-
-    <div class="group-card">
-      <div class="group-top">
-        <div class="card-ico ico-teal">🏅</div>
-        <div style="flex:1">
-          <div class="card-name">Tenues Lieutenant</div>
-          <div class="card-role">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
-        </div>
-        <span class="badge badge-teal">Supérieur</span>
-      </div>
-      <div class="grades-row">
-        <span class="grade-pill">Lieutenant-I</span>
-        <span class="grade-pill">Lieutenant-II</span>
-        <span class="grade-pill">Lieutenant-III</span>
-      </div>
-      <div class="items-row">
-        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">768-0</span></div>
-        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-5</span></div>
-      </div>
-      <div class="defcon-row">
-        <div class="dc dc-green"><div class="dc-icon"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 134-1</div>
-        <div class="dc dc-red"><div class="dc-icon"></div>Defcon 2-1 &nbsp;·&nbsp; GPB 128</div>
-      </div>
-    </div>
-
-    <div class="group-card">
-      <div class="group-top">
-        <div class="card-ico ico-teal">🎖️</div>
-        <div style="flex:1">
-          <div class="card-name">Tenues Captain</div>
-          <div class="card-role">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
-        </div>
-        <span class="badge badge-teal">Supérieur</span>
-      </div>
-      <div class="grades-row">
-        <span class="grade-pill">Captain-I</span>
-        <span class="grade-pill">Captain-II</span>
-        <span class="grade-pill">Captain-III</span>
-      </div>
-      <div class="items-row">
-        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">768-0</span></div>
-        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-6</span></div>
-      </div>
-      <div class="defcon-row">
-        <div class="dc dc-gray"><div class="dc-icon"></div>Defcon 5 → 1 &nbsp;·&nbsp; Gilet par balle au choix</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ COMMANDEMENT ══ -->
-  <div class="section" id="sec-commandement">
-    <div class="section-label">Commandement</div>
-    <div class="cmd-card">
-      <div class="cmd-icon">👑</div>
-      <div>
-        <div class="cmd-title">Tenue C-F — Staff &amp; Commandement</div>
-        <div class="cmd-detail">
-          Tenue blanche<br>
-          Gilet par balle au choix
-        </div>
-        <div class="cmd-note">Sur ordre du staff uniquement</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ FOOTER ══ -->
-  <div class="doc-footer">
-    <img class="footer-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Los_Santos_Police_Department_Logo.png/240px-Los_Santos_Police_Department_Logo.png"
-      alt="LSPD">
-    <div class="footer-text">LOS SANTOS POLICE DEPARTMENT &nbsp;·&nbsp; NIGHTCITY FA &nbsp;·&nbsp; DOCUMENT INTERNE</div>
-  </div>
-
-</div>
-
-<script>
-function show(id, btn, colorClass) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
-  document.getElementById('sec-' + id).classList.add('visible');
-  document.querySelectorAll('.nav-btn').forEach(b => {
-    b.classList.remove('active','nb-blue','nb-amber','nb-teal','nb-red');
-  });
-  btn.classList.add('active', colorClass);
-}
-</script>
-
-</body>
-</html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSPD NightCity FA — Guide des Tenues</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    /* Styles globaux et arrière-plan */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background-color: #06111f;
+      background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(21,56,100,0.45) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(10,30,60,0.4) 0%, transparent 60%),
+        url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Los_Santos_Police_Department_Logo.png/240px-Los_Santos_Police_Department_Logo.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 520px 520px;
+      background-attachment: fixed;
+      color: #e8edf5;
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 15%, rgba(12,68,124,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 85%, rgba(4,44,83,0.22) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HEADER ── */
+    .doc-header {
+      background: rgba(6,17,31,0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(53,110,180,0.35);
+      border-top: 3px solid #c9a84c;
+      border-radius: 14px;
+      padding: 36px 40px 30px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-logo {
+      width: 88px;
+      height: 88px;
+      flex-shrink: 0;
+      object-fit: contain;
+      filter: drop-shadow(0 0 12px rgba(201,168,76,0.4));
+    }
+
+    .header-text { flex: 1; }
+
+    .server-tag {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: #c9a84c;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      padding: 3px 12px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .doc-header h1 {
+      font-size: 30px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .doc-header h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: #7a9cbf;
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .header-divider {
+      height:
