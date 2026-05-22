@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LSPD NightCity FA — Manuel Opérationnel</title>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════ RESET & BASE ═══════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,7 +36,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Outfit', sans-serif;
   background-color: var(--navy);
   color: var(--text);
   min-height: 100vh;
@@ -88,6 +88,11 @@ body {
   overflow-y: auto;
 }
 
+/* Custom scrollbar for sidebar */
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+
 .sidebar-brand {
   padding: 24px 20px 20px;
   border-bottom: 1px solid rgba(201,168,76,0.12);
@@ -105,9 +110,9 @@ body {
 
 .brand-text {}
 .brand-name {
-  font-family: 'Oswald', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
   color: #fff;
   letter-spacing: 1px;
   line-height: 1.1;
@@ -152,7 +157,7 @@ body {
   transition: all 0.15s ease;
   border-left: 2px solid transparent;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.3px;
   position: relative;
@@ -168,6 +173,7 @@ body {
   background: rgba(55,138,221,0.1);
   color: var(--blue3);
   border-left-color: var(--blue2);
+  font-weight: 600;
 }
 
 .nav-item.active.c-gold  { background: rgba(201,168,76,0.1);  color: var(--gold2); border-left-color: var(--gold); }
@@ -176,7 +182,7 @@ body {
 .nav-item.active.c-green { background: rgba(99,153,34,0.1);   color: var(--green2); border-left-color: var(--green1); }
 .nav-item.active.c-blue  { background: rgba(55,138,221,0.1);  color: var(--blue3); border-left-color: var(--blue2); }
 
-.nav-icon { font-size: 14px; width: 18px; text-align: center; }
+.nav-icon { font-size: 15px; width: 20px; text-align: center; }
 
 .nav-badge {
   margin-left: auto;
@@ -218,11 +224,11 @@ body {
 }
 
 .page-title {
-  font-family: 'Oswald', sans-serif;
-  font-size: 28px;
-  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
   color: #fff;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   line-height: 1.1;
 }
 
@@ -249,8 +255,9 @@ body {
 }
 
 /* ═══════════════ SECTIONS ═══════════════ */
-.section { display: none; }
+.section { display: none; animation: fadeIn 0.3s ease; }
 .section.visible { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ═══════════════ HERO BANNER ═══════════════ */
 .hero-banner {
@@ -277,10 +284,10 @@ body {
   position: absolute;
   right: 28px; top: 50%;
   transform: translateY(-50%);
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 72px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.025);
+  font-weight: 800;
+  color: rgba(255,255,255,0.03);
   letter-spacing: 8px;
   pointer-events: none;
 }
@@ -294,20 +301,19 @@ body {
 }
 
 .hero-h {
-  font-family: 'Oswald', sans-serif;
-  font-size: 26px;
-  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
   color: #fff;
   margin-bottom: 10px;
   line-height: 1.15;
 }
 
 .hero-p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
-  max-width: 620px;
+  max-width: 660px;
   line-height: 1.7;
-  font-family: 'Share Tech Mono', monospace;
 }
 
 /* ═══════════════ GRID CARDS ═══════════════ */
@@ -337,7 +343,7 @@ body {
 
 .card:hover {
   border-color: var(--border2);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .card-head {
@@ -355,11 +361,11 @@ body {
 }
 
 .card-ico {
-  width: 38px; height: 38px;
+  width: 42px; height: 42px;
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .ico-blue  { background: rgba(21,95,165,0.25);  color: var(--blue3);  border: 1px solid rgba(55,138,221,0.3); }
@@ -368,8 +374,8 @@ body {
 .ico-red   { background: rgba(163,45,45,0.2);    color: var(--red2);   border: 1px solid rgba(226,75,74,0.3); }
 .ico-green { background: rgba(39,80,10,0.25);    color: var(--green2); border: 1px solid rgba(99,153,34,0.3); }
 
-.card-name { font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.2; }
-.card-sub  { font-size: 11px; color: var(--dim); margin-top: 2px; font-family: 'Share Tech Mono', monospace; }
+.card-name { font-size: 17px; font-weight: 700; color: var(--text); line-height: 1.2; }
+.card-sub  { font-size: 11px; color: var(--dim); margin-top: 4px; font-family: 'Share Tech Mono', monospace; letter-spacing: 0.5px; }
 
 /* ═══════════════ BADGE ═══════════════ */
 .badge {
@@ -469,13 +475,13 @@ body {
 }
 
 .grade-pill {
-  font-size: 12px;
-  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
   padding: 4px 12px;
   border-radius: 5px;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
-  color: var(--muted);
+  color: var(--text2);
 }
 
 /* ═══════════════ INFO BLOCK ═══════════════ */
@@ -486,40 +492,39 @@ body {
   border-radius: 8px;
   padding: 14px 18px;
   margin-bottom: 14px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
-  font-family: 'Share Tech Mono', monospace;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 .info-block.warn { border-left-color: var(--gold); }
 .info-block.danger { border-left-color: var(--red1); }
 .info-block.success { border-left-color: var(--teal1); }
 
-.info-block strong { color: var(--text2); font-weight: 600; }
+.info-block strong { color: var(--text2); font-weight: 700; }
 
 /* ═══════════════ DEFCON EXPLAINER ═══════════════ */
 .defcon-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .defcon-table th {
   text-align: left;
-  padding: 10px 16px;
+  padding: 12px 16px;
   border-bottom: 1px solid var(--border2);
   color: var(--dim);
-  font-weight: 400;
+  font-weight: 600;
+  font-family: 'Share Tech Mono', monospace;
   letter-spacing: 1px;
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
 }
 
 .defcon-table td {
-  padding: 12px 16px;
+  padding: 14px 16px;
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
 }
@@ -531,7 +536,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -554,13 +559,13 @@ body {
 .step-item:last-child { border-bottom: none; }
 
 .step-num {
-  width: 28px; height: 28px;
+  width: 30px; height: 30px;
   border-radius: 50%;
   background: rgba(55,138,221,0.15);
   border: 1px solid rgba(55,138,221,0.3);
   color: var(--blue3);
   font-family: 'Share Tech Mono', monospace;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
@@ -568,8 +573,8 @@ body {
 }
 
 .step-content {}
-.step-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-.step-desc  { font-size: 12px; color: var(--muted); font-family: 'Share Tech Mono', monospace; line-height: 1.7; }
+.step-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.step-desc  { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
 /* ═══════════════ COMMANDEMENT CARD ═══════════════ */
 .cmd-card {
@@ -585,9 +590,9 @@ body {
   margin-bottom: 14px;
 }
 .cmd-ico   { font-size: 34px; flex-shrink: 0; line-height: 1; }
-.cmd-title { font-size: 19px; font-weight: 700; color: var(--gold2); margin-bottom: 8px; font-family: 'Oswald', sans-serif; }
-.cmd-body  { font-size: 13px; color: #c5a0a0; font-family: 'Share Tech Mono', monospace; line-height: 1.9; }
-.cmd-note  { font-size: 11px; color: #7a4a4a; margin-top: 10px; font-family: 'Share Tech Mono', monospace; border-top: 1px solid rgba(226,75,74,0.15); padding-top: 10px; }
+.cmd-title { font-size: 20px; font-weight: 800; color: var(--gold2); margin-bottom: 8px; }
+.cmd-body  { font-size: 14px; color: #c5a0a0; line-height: 1.8; font-weight: 500;}
+.cmd-note  { font-size: 12px; color: #8c5b5b; margin-top: 10px; font-family: 'Share Tech Mono', monospace; border-top: 1px solid rgba(226,75,74,0.15); padding-top: 10px; }
 
 /* ═══════════════ ALERT BOX ═══════════════ */
 .alert {
@@ -596,16 +601,16 @@ body {
   background: rgba(186,117,23,0.1);
   border: 1px solid rgba(201,168,76,0.25);
   border-radius: 8px;
-  padding: 14px 18px;
+  padding: 16px 20px;
   margin-bottom: 16px;
-  font-size: 13px;
+  font-size: 14px;
   color: #d4b060;
-  font-family: 'Share Tech Mono', monospace;
-  line-height: 1.7;
+  line-height: 1.6;
+  font-weight: 500;
 }
 .alert.danger { background: rgba(163,45,45,0.12); border-color: rgba(226,75,74,0.25); color: var(--red2); }
 .alert.success { background: rgba(15,110,86,0.12); border-color: rgba(29,158,117,0.25); color: var(--teal2); }
-.alert-icon { font-size: 18px; flex-shrink: 0; }
+.alert-icon { font-size: 20px; flex-shrink: 0; }
 
 /* ═══════════════ RULE LINE ═══════════════ */
 .rule-card {
@@ -622,27 +627,29 @@ body {
 .rule-card:hover { border-color: var(--border2); }
 .rule-num {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--dim);
   min-width: 32px;
   flex-shrink: 0;
   margin-top: 3px;
+  font-weight: 700;
 }
 .rule-text { font-size: 14px; color: var(--text2); line-height: 1.6; }
-.rule-text strong { color: #fff; }
+.rule-text strong { color: #fff; font-weight: 700; }
 
 /* ═══════════════ SECTION LABEL ═══════════════ */
 .sec-label {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 10px;
+  font-size: 11px;
   color: var(--dim);
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 14px;
-  margin-top: 24px;
+  margin-bottom: 16px;
+  margin-top: 28px;
   display: flex;
   align-items: center;
   gap: 10px;
+  font-weight: 700;
 }
 .sec-label:first-child { margin-top: 0; }
 .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
@@ -669,10 +676,10 @@ body {
 .toc-item:hover {
   background: rgba(55,138,221,0.08);
   border-color: rgba(55,138,221,0.25);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 .toc-ico   { font-size: 20px; }
-.toc-name  { font-size: 14px; font-weight: 600; color: var(--text2); }
+.toc-name  { font-size: 15px; font-weight: 700; color: var(--text2); }
 .toc-desc  { font-size: 11px; color: var(--dim); margin-top: 2px; font-family: 'Share Tech Mono', monospace; }
 
 /* ═══════════════ STAT ROW ═══════════════ */
@@ -689,7 +696,7 @@ body {
   padding: 16px 18px;
   text-align: center;
 }
-.stat-val { font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 600; color: var(--gold2); line-height: 1; margin-bottom: 6px; }
+.stat-val { font-size: 32px; font-weight: 800; color: var(--gold2); line-height: 1; margin-bottom: 6px; }
 .stat-lab { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--dim); letter-spacing: 1px; text-transform: uppercase; }
 
 /* ═══════════════ FOOTER ═══════════════ */
@@ -703,7 +710,7 @@ body {
   gap: 12px;
 }
 .footer-logo { width: 36px; height: 36px; object-fit: contain; opacity: 0.25; }
-.footer-text { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: #2a4a6a; letter-spacing: 2px; text-align: center; }
+.footer-text { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: #3b5f85; letter-spacing: 2px; text-align: center; }
 
 /* ═══════════════ MOBILE TOGGLE ═══════════════ */
 .menu-toggle {
@@ -759,13 +766,11 @@ body {
 <div class="bg-layer"></div>
 <img class="bg-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Los_Santos_Police_Department_Logo.png/240px-Los_Santos_Police_Department_Logo.png" alt="">
 
-<!-- Mobile toggle -->
 <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
 
 <div class="app-shell">
 
-  <!-- ═══════════ SIDEBAR ═══════════ -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-brand">
       <img class="sidebar-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Los_Santos_Police_Department_Logo.png/240px-Los_Santos_Police_Department_Logo.png" alt="LSPD">
@@ -786,7 +791,6 @@ body {
       <div class="nav-section-title">Manuel Rookie</div>
       <div class="nav-item" data-section="tenues" onclick="goTo(this,'tenues','c-amber')">
         <span class="nav-icon">👕</span> Guide des Tenues
-        <span class="nav-badge">Tous</span>
       </div>
       <div class="nav-item" data-section="defcon" onclick="goTo(this,'defcon','c-amber')">
         <span class="nav-icon">🚨</span> Niveaux DEFCON
@@ -794,15 +798,21 @@ body {
       <div class="nav-item" data-section="radio" onclick="goTo(this,'radio','c-amber')">
         <span class="nav-icon">📻</span> Radio & Codes
       </div>
+      <div class="nav-item" data-section="permis" onclick="goTo(this,'permis','c-amber')">
+        <span class="nav-icon">🪪</span> Permis (PPA)
+      </div>
     </div>
 
     <div class="nav-section">
       <div class="nav-section-title">Manuel LSPD</div>
       <div class="nav-item" data-section="grades" onclick="goTo(this,'grades','c-blue')">
-        <span class="nav-icon">🎖️</span> Hiérarchie & Grades
+        <span class="nav-icon">🎖️</span> Hiérarchie
       </div>
-      <div class="nav-item" data-section="patrouille" onclick="goTo(this,'patrouille','c-blue')">
-        <span class="nav-icon">🚔</span> Règles de Patrouille
+      <div class="nav-item" data-section="armement" onclick="goTo(this,'armement','c-blue')">
+        <span class="nav-icon">🔫</span> Armement
+      </div>
+      <div class="nav-item" data-section="vehicules" onclick="goTo(this,'vehicules','c-blue')">
+        <span class="nav-icon">🚔</span> Véhicules & Conduite
       </div>
     </div>
 
@@ -831,10 +841,8 @@ body {
     </div>
   </nav>
 
-  <!-- ═══════════ MAIN ═══════════ -->
   <main class="main">
 
-    <!-- ══ ACCUEIL ══ -->
     <div class="section visible" id="sec-home">
       <div class="topbar">
         <div class="topbar-left">
@@ -850,45 +858,45 @@ body {
       <div class="hero-banner">
         <div class="hero-pre">⚡ DOCUMENT OFFICIEL — USAGE INTERNE LSPD</div>
         <div class="hero-h">Bienvenue dans la Los Santos<br>Police Department</div>
-        <div class="hero-p">Ce manuel est votre référence opérationnelle sur le serveur NightCity FA. Il couvre les tenues réglementaires, les niveaux d'alerte DEFCON, les procédures d'arrestation, la hiérarchie, et les règles de conduite. Lisez-le attentivement — il ne remplacera jamais les conseils de vos formateurs, mais il constitue votre base.</div>
+        <div class="hero-p">Ce manuel est votre référence opérationnelle sur le serveur NightCity FA. Il couvre les tenues réglementaires, l'armement, les véhicules, les niveaux d'alerte DEFCON et l'ensemble de nos procédures (arrestations, radio). Lisez-le attentivement pour assurer un RP policier cohérent et immersif.</div>
       </div>
 
       <div class="stat-row">
         <div class="stat-box"><div class="stat-val">5</div><div class="stat-lab">Niveaux DEFCON</div></div>
         <div class="stat-box"><div class="stat-val">4</div><div class="stat-lab">Unités Spéciales</div></div>
         <div class="stat-box"><div class="stat-val">12+</div><div class="stat-lab">Grades actifs</div></div>
-        <div class="stat-box"><div class="stat-val">3</div><div class="stat-lab">Catégories tenues</div></div>
+        <div class="stat-box"><div class="stat-val">24/7</div><div class="stat-lab">Opérationnel</div></div>
       </div>
 
       <div class="sec-label">Navigation rapide</div>
       <div class="toc-grid">
         <div class="toc-item" onclick="goToId('tenues','c-amber')">
           <div class="toc-ico">👕</div>
-          <div><div class="toc-name">Tenues</div><div class="toc-desc">Codes vestimentaires par grade</div></div>
+          <div><div class="toc-name">Tenues</div><div class="toc-desc">Codes vestimentaires</div></div>
+        </div>
+        <div class="toc-item" onclick="goToId('armement','c-blue')">
+          <div class="toc-ico">🔫</div>
+          <div><div class="toc-name">Armement</div><div class="toc-desc">Armes autorisées par grade</div></div>
+        </div>
+        <div class="toc-item" onclick="goToId('vehicules','c-blue')">
+          <div class="toc-ico">🚔</div>
+          <div><div class="toc-name">Véhicules</div><div class="toc-desc">Règles de flotte et patrouille</div></div>
+        </div>
+        <div class="toc-item" onclick="goToId('permis','c-amber')">
+          <div class="toc-ico">🪪</div>
+          <div><div class="toc-name">Permis</div><div class="toc-desc">PPA et documents civils</div></div>
         </div>
         <div class="toc-item" onclick="goToId('defcon','c-amber')">
           <div class="toc-ico">🚨</div>
-          <div><div class="toc-name">DEFCON</div><div class="toc-desc">Niveaux d'alerte opérationnels</div></div>
+          <div><div class="toc-name">DEFCON</div><div class="toc-desc">Niveaux d'alerte</div></div>
         </div>
-        <div class="toc-item" onclick="goToId('grades','c-blue')">
-          <div class="toc-ico">🎖️</div>
-          <div><div class="toc-name">Hiérarchie</div><div class="toc-desc">Grades et responsabilités</div></div>
+        <div class="toc-item" onclick="goToId('radio','c-amber')">
+          <div class="toc-ico">📻</div>
+          <div><div class="toc-name">Radio</div><div class="toc-desc">Codes 10 essentiels</div></div>
         </div>
         <div class="toc-item" onclick="goToId('arrestation','c-teal')">
           <div class="toc-ico">⚖️</div>
-          <div><div class="toc-name">Arrestation</div><div class="toc-desc">Procédures réglementaires</div></div>
-        </div>
-        <div class="toc-item" onclick="goToId('miranda','c-teal')">
-          <div class="toc-ico">📋</div>
-          <div><div class="toc-name">Miranda</div><div class="toc-desc">Droits de la personne interpellée</div></div>
-        </div>
-        <div class="toc-item" onclick="goToId('divisions','c-green')">
-          <div class="toc-ico">🛡️</div>
-          <div><div class="toc-name">Divisions</div><div class="toc-desc">K9 · SWAT · Air Unit · Ops</div></div>
-        </div>
-        <div class="toc-item" onclick="goToId('patrouille','c-blue')">
-          <div class="toc-ico">🚔</div>
-          <div><div class="toc-name">Patrouille</div><div class="toc-desc">Règles et équipement véhicule</div></div>
+          <div><div class="toc-name">Arrestation</div><div class="toc-desc">Procédures & Avocats</div></div>
         </div>
         <div class="toc-item" onclick="goToId('reglement','c-red')">
           <div class="toc-ico">📜</div>
@@ -898,11 +906,10 @@ body {
 
       <div class="alert warn">
         <span class="alert-icon">⚠️</span>
-        <span>Ce manuel est un outil de référence. Il ne remplace pas la formation dispensée par vos FTO. En cas de doute sur une procédure, contactez toujours un supérieur hiérarchique.</span>
+        <span>Ce manuel est un outil de référence. Il ne remplace pas la formation dispensée par vos FTO. En cas de doute sur une procédure, contactez toujours un supérieur hiérarchique en radio.</span>
       </div>
     </div>
 
-    <!-- ══ TENUES ══ -->
     <div class="section" id="sec-tenues">
       <div class="topbar">
         <div class="topbar-left">
@@ -911,7 +918,6 @@ body {
         </div>
         <div class="topbar-pills">
           <div class="tpill">Tous grades</div>
-          <div class="tpill">Réf. opérationnelle</div>
         </div>
       </div>
 
@@ -919,7 +925,6 @@ body {
         Chaque agent <strong>est tenu de porter la tenue réglementaire</strong> correspondant à son grade et au niveau DEFCON en vigueur. Le non-respect de l'uniforme peut entraîner une sanction disciplinaire. Les codes correspondent aux <strong>IDs des éléments de personnalisation</strong> en jeu.
       </div>
 
-      <!-- Unités Spéciales -->
       <div class="sec-label">Unités Spéciales</div>
       <div class="cards-grid">
 
@@ -934,10 +939,7 @@ body {
           <div class="chips-row">
             <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
             <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">575-1</span></div>
-            <div class="chip"><span class="chip-lbl">Bras</span><span class="chip-val">20</span></div>
             <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">334</span></div>
-            <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-            <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">207</span></div>
             <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">133</span></div>
           </div>
         </div>
@@ -951,11 +953,8 @@ body {
             <span class="badge badge-blue">Spéciale</span>
           </div>
           <div class="chips-row">
-            <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
             <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">579</span></div>
-            <div class="chip"><span class="chip-lbl">Bras</span><span class="chip-val">21</span></div>
             <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">214</span></div>
-            <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
             <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">198</span></div>
           </div>
         </div>
@@ -971,33 +970,13 @@ body {
           <div class="chips-row">
             <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">155</span></div>
             <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">757</span></div>
-            <div class="chip"><span class="chip-lbl">Bras</span><span class="chip-val">26</span></div>
             <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">333</span></div>
-            <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
             <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">92</span></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id">
-              <div class="card-ico ico-blue">⚔️</div>
-              <div><div class="card-name">Tenue Decone 1</div><div class="card-sub">OPÉRATIONS SPÉCIALES</div></div>
-            </div>
-            <span class="badge badge-blue">Spéciale</span>
-          </div>
-          <div class="chips-row">
-            <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-            <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">773</span></div>
-            <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">333</span></div>
-            <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-            <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">128</span></div>
           </div>
         </div>
 
       </div>
 
-      <!-- Officiers -->
       <div class="sec-label">Officiers</div>
 
       <div class="group-card">
@@ -1005,15 +984,13 @@ body {
           <div class="card-ico ico-amber">🆕</div>
           <div style="flex:1">
             <div class="card-name">Tenue R — Recrue</div>
-            <div class="card-sub">PREMIER GRADE — PÉRIODE DE FORMATION</div>
+            <div class="card-sub">PÉRIODE DE FORMATION</div>
           </div>
           <span class="badge badge-amber">Officier</span>
         </div>
         <div class="chips-row">
-          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
           <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">600-4</span></div>
           <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
           <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-13</span></div>
         </div>
         <div class="defcon-row">
@@ -1038,10 +1015,8 @@ body {
           <span class="grade-pill">Off-III</span>
         </div>
         <div class="chips-row">
-          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
           <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">599-7</span></div>
           <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
           <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-1</span></div>
         </div>
         <div class="defcon-row">
@@ -1050,51 +1025,24 @@ body {
         </div>
       </div>
 
-      <div class="group-card">
-        <div class="group-head">
-          <div class="card-ico ico-amber">✅</div>
-          <div style="flex:1">
-            <div class="card-name">Tenue SLO — Senior Line Officer</div>
-            <div class="card-sub">OFFICIER EXPÉRIMENTÉ</div>
-          </div>
-          <span class="badge badge-amber">Officier</span>
-        </div>
-        <div class="chips-row">
-          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">599-7</span></div>
-          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-          <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-2</span></div>
-        </div>
-        <div class="defcon-row">
-          <div class="dc dc-green"><div class="dc-dot"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 114</div>
-          <div class="dc dc-red"><div class="dc-dot"></div>Defcon 2-1 &nbsp;·&nbsp; GPB 128</div>
-        </div>
-      </div>
-
-      <!-- Grades supérieurs -->
-      <div class="sec-label">Grades Supérieurs</div>
+      <div class="sec-label">Grades Supérieurs & Commandement</div>
 
       <div class="group-card">
         <div class="group-head">
           <div class="card-ico ico-teal">🛡️</div>
           <div style="flex:1">
-            <div class="card-name">Tenues SRG — Sergeant</div>
-            <div class="card-sub">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
+            <div class="card-name">Tenues Sergent & Lieutenant</div>
+            <div class="card-sub">SUPERVISION TERRAIN</div>
           </div>
           <span class="badge badge-teal">Supérieur</span>
         </div>
         <div class="grades-row">
-          <span class="grade-pill">SRG-I</span>
-          <span class="grade-pill">SRG-II</span>
-          <span class="grade-pill">SRG-III</span>
+          <span class="grade-pill">Sergeant</span>
+          <span class="grade-pill">Lieutenant</span>
         </div>
         <div class="chips-row">
-          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
           <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">768-0</span></div>
           <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-          <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-4</span></div>
         </div>
         <div class="defcon-row">
           <div class="dc dc-green"><div class="dc-dot"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 128-1</div>
@@ -1102,719 +1050,216 @@ body {
         </div>
       </div>
 
-      <div class="group-card">
-        <div class="group-head">
-          <div class="card-ico ico-teal">🏅</div>
-          <div style="flex:1">
-            <div class="card-name">Tenues Lieutenant</div>
-            <div class="card-sub">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
-          </div>
-          <span class="badge badge-teal">Supérieur</span>
-        </div>
-        <div class="grades-row">
-          <span class="grade-pill">Lieutenant-I</span>
-          <span class="grade-pill">Lieutenant-II</span>
-          <span class="grade-pill">Lieutenant-III</span>
-        </div>
-        <div class="chips-row">
-          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">768-0</span></div>
-          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-          <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-5</span></div>
-        </div>
-        <div class="defcon-row">
-          <div class="dc dc-green"><div class="dc-dot"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 134-1</div>
-          <div class="dc dc-red"><div class="dc-dot"></div>Defcon 2-1 &nbsp;·&nbsp; GPB 128</div>
-        </div>
-      </div>
-
-      <div class="group-card">
-        <div class="group-head">
-          <div class="card-ico ico-teal">🎖️</div>
-          <div style="flex:1">
-            <div class="card-name">Tenues Captain</div>
-            <div class="card-sub">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
-          </div>
-          <span class="badge badge-teal">Supérieur</span>
-        </div>
-        <div class="grades-row">
-          <span class="grade-pill">Captain-I</span>
-          <span class="grade-pill">Captain-II</span>
-          <span class="grade-pill">Captain-III</span>
-        </div>
-        <div class="chips-row">
-          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
-          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">768-0</span></div>
-          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
-          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
-          <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-6</span></div>
-        </div>
-        <div class="defcon-row">
-          <div class="dc dc-gray"><div class="dc-dot"></div>Defcon 5 → 1 &nbsp;·&nbsp; Gilet par balle au choix</div>
-        </div>
-      </div>
-
-      <!-- Commandement -->
-      <div class="sec-label">Commandement</div>
       <div class="cmd-card">
         <div class="cmd-ico">👑</div>
         <div>
-          <div class="cmd-title">Tenue C-F — Staff &amp; Commandement</div>
-          <div class="cmd-body">Tenue blanche<br>Gilet par balle au choix</div>
-          <div class="cmd-note">⚠️ Sur ordre du staff uniquement — réservé aux membres du commandement</div>
+          <div class="cmd-title">Tenue Captain & Commandement</div>
+          <div class="cmd-body">Tenue blanche réglementaire (Chemisette)<br>Gilet par balle au choix selon la situation</div>
+          <div class="cmd-note">⚠️ Le commandement est autorisé à opérer en civil ou costume si la mission l'exige.</div>
         </div>
       </div>
     </div>
 
-    <!-- ══ DEFCON ══ -->
-    <div class="section" id="sec-defcon">
+    <div class="section" id="sec-armement">
       <div class="topbar">
         <div class="topbar-left">
-          <div class="page-label">Manuel Rookie</div>
-          <div class="page-title">Niveaux <span>DEFCON</span></div>
-        </div>
-        <div class="topbar-pills">
-          <div class="tpill">Alerte opérationnelle</div>
+          <div class="page-label">Manuel LSPD</div>
+          <div class="page-title">Armement <span>Autorisé</span></div>
         </div>
       </div>
 
-      <div class="hero-banner">
-        <div class="hero-pre">📖 DÉFINITION OPÉRATIONNELLE</div>
-        <div class="hero-h">Qu'est-ce que le DEFCON ?</div>
-        <div class="hero-p">Le DEFCON (Defense Condition) est un système de niveaux d'alerte opérationnels utilisé par le LSPD pour adapter l'équipement et la posture des agents en fonction de la dangerosité de la situation en cours sur le territoire. Chaque niveau implique des règles d'équipement spécifiques, notamment concernant le gilet pare-balles (GPB).</div>
+      <div class="alert danger">
+        <span class="alert-icon">⚠️</span>
+        <span>L'utilisation d'une arme non autorisée pour votre grade entraînera une sanction disciplinaire immédiate. Vous ne devez sortir de l'armurerie que le matériel pour lequel vous êtes habilité.</span>
       </div>
 
-      <div class="sec-label">Tableau des niveaux d'alerte</div>
-
-      <div class="card" style="padding:0; overflow:hidden;">
-        <table class="defcon-table">
-          <thead>
-            <tr>
-              <th>Niveau</th>
-              <th>Couleur</th>
-              <th>Désignation</th>
-              <th>Contexte</th>
-              <th>Équipement</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="dc-level"><span style="color:#97C459;font-size:18px">●</span> DEFCON 5</span></td>
-              <td><span style="color:#97C459;font-family:'Share Tech Mono',monospace;font-size:12px">VERT</span></td>
-              <td style="color:#c5d8ee;font-family:'Share Tech Mono',monospace;font-size:12px">Normal</td>
-              <td style="color:#7a9cbf;font-family:'Share Tech Mono',monospace;font-size:11px">Aucune menace connue. Patrouille standard.</td>
-              <td style="color:#97C459;font-family:'Share Tech Mono',monospace;font-size:12px">GPB léger selon grade</td>
-            </tr>
-            <tr>
-              <td><span class="dc-level"><span style="color:#97C459;font-size:18px">●</span> DEFCON 4</span></td>
-              <td><span style="color:#97C459;font-family:'Share Tech Mono',monospace;font-size:12px">VERT</span></td>
-              <td style="color:#c5d8ee;font-family:'Share Tech Mono',monospace;font-size:12px">Élevé</td>
-              <td style="color:#7a9cbf;font-family:'Share Tech Mono',monospace;font-size:11px">Tension légère, activité criminelle signalée.</td>
-              <td style="color:#97C459;font-family:'Share Tech Mono',monospace;font-size:12px">GPB léger selon grade</td>
-            </tr>
-            <tr>
-              <td><span class="dc-level"><span style="color:#97C459;font-size:18px">●</span> DEFCON 3</span></td>
-              <td><span style="color:#97C459;font-family:'Share Tech Mono',monospace;font-size:12px">VERT</span></td>
-              <td style="color:#c5d8ee;font-family:'Share Tech Mono',monospace;font-size:12px">Vigilance</td>
-              <td style="color:#7a9cbf;font-family:'Share Tech Mono',monospace;font-size:11px">Menace active, intervention possible.</td>
-              <td style="color:#FAC775;font-family:'Share Tech Mono',monospace;font-size:12px">GPB réglementaire grade</td>
-            </tr>
-            <tr>
-              <td><span class="dc-level"><span style="color:#E24B4A;font-size:18px">●</span> DEFCON 2</span></td>
-              <td><span style="color:#E24B4A;font-family:'Share Tech Mono',monospace;font-size:12px">ROUGE</span></td>
-              <td style="color:#c5d8ee;font-family:'Share Tech Mono',monospace;font-size:12px">Critique</td>
-              <td style="color:#7a9cbf;font-family:'Share Tech Mono',monospace;font-size:11px">Situation de crise active. Braquage, fusillade.</td>
-              <td style="color:#F09595;font-family:'Share Tech Mono',monospace;font-size:12px">GPB 128 obligatoire</td>
-            </tr>
-            <tr>
-              <td><span class="dc-level"><span style="color:#E24B4A;font-size:18px">●</span> DEFCON 1</span></td>
-              <td><span style="color:#E24B4A;font-family:'Share Tech Mono',monospace;font-size:12px">ROUGE</span></td>
-              <td style="color:#c5d8ee;font-family:'Share Tech Mono',monospace;font-size:12px">Maximum</td>
-              <td style="color:#7a9cbf;font-family:'Share Tech Mono',monospace;font-size:11px">Menace maximale. Prise d'otage, attaque organisée.</td>
-              <td style="color:#F09595;font-family:'Share Tech Mono',monospace;font-size:12px">GPB 128 + équipement SWAT</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="sec-label">Règles GPB par situation</div>
+      <div class="sec-label">Dotation par grade</div>
 
       <div class="cards-grid">
         <div class="card">
           <div class="card-head">
-            <div class="card-id">
-              <div class="card-ico ico-green">🟢</div>
-              <div><div class="card-name">DEFCON 5 → 3</div><div class="card-sub">SITUATION NORMALE À VIGILANCE</div></div>
-            </div>
+            <div class="card-id"><div class="card-ico ico-amber">🆕</div>
+            <div><div class="card-name">Recrue</div><div class="card-sub">ÉQUIPEMENT LÉGER</div></div></div>
           </div>
-          <div class="info-block success" style="margin:0">
-            Le gilet pare-balles est déterminé par le <strong>grade de l'agent</strong>. Chaque tenue indique le GPB correspondant pour cette plage de niveaux. Respecter la référence de sa fiche de tenue.
-          </div>
+          <ul class="steps-list" style="margin-top: 10px; margin-bottom:0;">
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ <strong>Arme de poing</strong> (Combat Pistol)</div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ <strong>Taser</strong></div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Matraque (Nightstick)</div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Lampe torche & Menottes</div></div></li>
+          </ul>
         </div>
+
         <div class="card">
           <div class="card-head">
-            <div class="card-id">
-              <div class="card-ico ico-red">🔴</div>
-              <div><div class="card-name">DEFCON 2 → 1</div><div class="card-sub">SITUATION CRITIQUE À MAXIMUM</div></div>
-            </div>
+            <div class="card-id"><div class="card-ico ico-amber">👮</div>
+            <div><div class="card-name">Officier</div><div class="card-sub">LIGNE D'INTERVENTION</div></div></div>
           </div>
-          <div class="info-block danger" style="margin:0">
-            Le GPB <strong>128 est obligatoire pour tous les grades</strong> (sauf Captain et Commandement qui ont le choix). Il n'y a pas d'exception hors autorisation de commandement.
+          <ul class="steps-list" style="margin-top: 10px; margin-bottom:0;">
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Équipement Recrue</div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ <strong>SMG</strong> (Mitraillette légère)</div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Fusil à pompe (Shotgun)</div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc" style="color:var(--dim)">❌ Pas de fusil d'assaut (AR)</div></div></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-id"><div class="card-ico ico-teal">🛡️</div>
+            <div><div class="card-name">Sergent & Lieutenant</div><div class="card-sub">ARMEMENT LOURD</div></div></div>
           </div>
+          <ul class="steps-list" style="margin-top: 10px; margin-bottom:0;">
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Équipement Officier</div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ <strong>Carbine Rifle</strong> (Fusil d'assaut)</div></div></li>
+            <li class="step-item" style="padding: 6px 0;"><div class="step-content"><div class="step-desc">✔️ Advanced Rifle</div></div></li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <!-- ══ RADIO ══ -->
-    <div class="section" id="sec-radio">
-      <div class="topbar">
-        <div class="topbar-left">
-          <div class="page-label">Manuel Rookie</div>
-          <div class="page-title">Radio <span>&amp; Codes</span></div>
-        </div>
-      </div>
-
-      <div class="info-block warn">
-        La radio est l'artère vitale de toute opération policière. <strong>Restez concis, précis et professionnels</strong> sur les canaux. Evitez les communications inutiles qui encombrent les fréquences en situation de crise.
-      </div>
-
-      <div class="sec-label">Codes radio essentiels</div>
+      <div class="sec-label">Dotations Spéciales</div>
       <div class="cards-grid">
         <div class="card">
           <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-blue">📡</div>
-            <div><div class="card-name">Code 10-4</div><div class="card-sub">ACCUSÉ DE RÉCEPTION</div></div></div>
+            <div class="card-id"><div class="card-ico ico-blue">🎯</div>
+            <div><div class="card-name">SWAT</div><div class="card-sub">TACTIQUE</div></div></div>
           </div>
-          <div class="info-block" style="margin:0">Message reçu et compris. Confirmation standard.</div>
+          <div class="info-block" style="margin:0;">
+            ✔️ <strong>Sniper Rifle</strong> (Sur autorisation)<br>
+            ✔️ Fusil d'assaut lourd / MK2<br>
+            ✔️ Grenades fumigènes & Flashbangs<br>
+            <span style="color:var(--dim);font-size:12px;margin-top:5px;display:block;">* Uniquement en service actif SWAT.</span>
+          </div>
         </div>
-        <div class="card">
+
+        <div class="card" style="border-color: rgba(201,168,76,0.4);">
           <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-amber">🔫</div>
-            <div><div class="card-name">Code 10-13</div><div class="card-sub">OFFICIER EN DANGER</div></div></div>
+            <div class="card-id"><div class="card-ico ico-red" style="border-color:var(--gold);color:var(--gold)">👑</div>
+            <div><div class="card-name" style="color:var(--gold2)">Capitaine & +</div><div class="card-sub">COMMANDEMENT</div></div></div>
           </div>
-          <div class="info-block danger" style="margin:0">Agent en difficulté, nécessite renfort immédiat. Priorité absolue.</div>
-        </div>
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-teal">🏥</div>
-            <div><div class="card-name">Code 10-52</div><div class="card-sub">AMBULANCE REQUISE</div></div></div>
+          <div class="info-block" style="margin:0; border-left-color: var(--gold)">
+            ✔️ <strong>Accès total à l'armurerie.</strong><br>
+            Peut débloquer des armes spécifiques pour une opération (ex: fusils de précision pour Officiers lors d'une surveillance).
           </div>
-          <div class="info-block success" style="margin:0">Demande d'intervention médicale sur les lieux.</div>
-        </div>
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-red">🚫</div>
-            <div><div class="card-name">Code 10-7</div><div class="card-sub">HORS SERVICE</div></div></div>
-          </div>
-          <div class="info-block" style="margin:0">Agent hors service, non disponible pour intervention.</div>
-        </div>
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-green">✅</div>
-            <div><div class="card-name">Code 10-8</div><div class="card-sub">EN SERVICE</div></div></div>
-          </div>
-          <div class="info-block success" style="margin:0">Agent disponible, prêt à intervenir sur appel.</div>
-        </div>
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-amber">🚗</div>
-            <div><div class="card-name">Code 10-80</div><div class="card-sub">POURSUITE EN COURS</div></div></div>
-          </div>
-          <div class="info-block warn" style="margin:0">Poursuite active d'un véhicule suspect. Indiquer direction.</div>
         </div>
       </div>
     </div>
 
-    <!-- ══ GRADES ══ -->
-    <div class="section" id="sec-grades">
+    <div class="section" id="sec-vehicules">
       <div class="topbar">
         <div class="topbar-left">
           <div class="page-label">Manuel LSPD</div>
-          <div class="page-title">Hiérarchie <span>&amp; Grades</span></div>
+          <div class="page-title">Véhicules <span>&amp; Conduite</span></div>
         </div>
       </div>
 
-      <div class="info-block">
-        La hiérarchie du LSPD est strictement respectée en toutes circonstances. <strong>Un ordre d'un supérieur est exécuté sans discussion</strong> sauf s'il enfreint directement le règlement du serveur. En cas de désaccord, la voie hiérarchique est utilisée après la mission.
-      </div>
-
-      <div class="sec-label">Grades de terrain — Officiers</div>
-      <div class="cards-grid-3">
-        <div class="rule-card">
-          <div class="rule-num">R</div>
-          <div class="rule-text"><strong>Recrue</strong> — Grade d'entrée. Sous la supervision permanente d'un FTO. Ne peut patrouiller seul.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">Off</div>
-          <div class="rule-text"><strong>Officer</strong> — Officier de base. Patrouille autonome autorisée.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">Off-I</div>
-          <div class="rule-text"><strong>Officer I</strong> — Officier confirmé, peut encadrer une recrue.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">Off-II</div>
-          <div class="rule-text"><strong>Officer II</strong> — Officier expérimenté.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">Off-III</div>
-          <div class="rule-text"><strong>Officer III</strong> — Officier senior de ligne.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">SLO</div>
-          <div class="rule-text"><strong>Senior Line Officer</strong> — Officier aguerri, référent terrain.</div>
-        </div>
-      </div>
-
-      <div class="sec-label">Grades supérieurs — Commandement terrain</div>
-      <div class="cards-grid-3">
-        <div class="rule-card">
-          <div class="rule-num">SRG-I</div>
-          <div class="rule-text"><strong>Sergeant I</strong> — Responsable d'une équipe. Gère les briefings.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">SRG-II</div>
-          <div class="rule-text"><strong>Sergeant II</strong> — Coordonne plusieurs équipes.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">SRG-III</div>
-          <div class="rule-text"><strong>Sergeant III</strong> — Chef de brigade.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">LT-I</div>
-          <div class="rule-text"><strong>Lieutenant I</strong> — Commandement de secteur.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">LT-II</div>
-          <div class="rule-text"><strong>Lieutenant II</strong> — Supervision des opérations.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">LT-III</div>
-          <div class="rule-text"><strong>Lieutenant III</strong> — Planification tactique.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">CPT-I</div>
-          <div class="rule-text"><strong>Captain I</strong> — Direction de division.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">CPT-II</div>
-          <div class="rule-text"><strong>Captain II</strong> — Administration et politique interne.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">CPT-III</div>
-          <div class="rule-text"><strong>Captain III</strong> — Commandement de district.</div>
-        </div>
-      </div>
-
-      <div class="sec-label">Commandement — Staff</div>
-      <div class="cmd-card">
-        <div class="cmd-ico">👑</div>
+      <div class="alert danger">
+        <span class="alert-icon">🛑</span>
         <div>
-          <div class="cmd-title">Staff & Commandement Supérieur</div>
-          <div class="cmd-body">Accès à toutes les informations classifiées<br>Gestion de la politique du département<br>Nomination et révocation des grades<br>Tenue blanche — Gilet pare-balles au choix</div>
-          <div class="cmd-note">⚠️ Les décisions du staff sont définitives et s'appliquent à l'ensemble du département sans exception.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ PATROUILLE ══ -->
-    <div class="section" id="sec-patrouille">
-      <div class="topbar">
-        <div class="topbar-left">
-          <div class="page-label">Manuel LSPD</div>
-          <div class="page-title">Règles de <span>Patrouille</span></div>
+          <strong>FORMATION HAUTE VITESSE OBLIGATOIRE</strong><br>
+          Il faut <strong>obligatoirement</strong> avoir passé et validé la formation "Haute Vitesse" avec un instructeur pour avoir l'autorisation de conduire les véhicules d'interception rapide (Buffalo, Scout, Charger). Tout agent surpris dans ces véhicules sans l'habilitation sera lourdement sanctionné.
         </div>
       </div>
 
-      <div class="sec-label">Composition de la patrouille</div>
+      <div class="sec-label">Flotte LSPD (Du moins puissant au plus puissant)</div>
+      
+      <div class="cards-grid-3">
+        <div class="rule-card">
+          <div class="rule-num">1</div>
+          <div class="rule-text"><strong>Stanier / Victoria</strong><br><span style="color:var(--dim);font-size:12px;">Standard. Pour Recrues et Officiers.</span></div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">2</div>
+          <div class="rule-text"><strong>Police Cruiser (Torus)</strong><br><span style="color:var(--dim);font-size:12px;">Officiers confirmés. Polyvalent.</span></div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-num">3</div>
+          <div class="rule-text"><strong>Riot / Fourgon</strong><br><span style="color:var(--dim);font-size:12px;">Transport de suspects ou SWAT.</span></div>
+        </div>
+        <div class="rule-card" style="border-color:var(--red1)">
+          <div class="rule-num" style="color:var(--red2)">4</div>
+          <div class="rule-text"><strong>Scout (SUV Rapide)</strong><br><span style="color:var(--red2);font-size:12px;font-weight:700;">Habilitation Haute Vitesse Requise</span></div>
+        </div>
+        <div class="rule-card" style="border-color:var(--red1)">
+          <div class="rule-num" style="color:var(--red2)">5</div>
+          <div class="rule-text"><strong>Buffalo (Intercepteur)</strong><br><span style="color:var(--red2);font-size:12px;font-weight:700;">Habilitation Haute Vitesse Requise</span></div>
+        </div>
+        <div class="rule-card" style="border-color:var(--gold)">
+          <div class="rule-num" style="color:var(--gold)">👑</div>
+          <div class="rule-text"><strong>Unmarked / Banalisés</strong><br><span style="color:var(--gold);font-size:12px;">Réservés aux enquêtes et Commandement. Captain & + ont accès à l'intégralité du garage.</span></div>
+        </div>
+      </div>
 
+      <div class="sec-label">Règles de Patrouille</div>
       <div class="cards-grid">
         <div class="card">
           <div class="card-head">
             <div class="card-id"><div class="card-ico ico-blue">👥</div>
-            <div><div class="card-name">Binôme standard</div><div class="card-sub">CONFIGURATION PAR DÉFAUT</div></div></div>
+            <div><div class="card-name">Binôme standard</div></div></div>
           </div>
           <div class="info-block success" style="margin:0">
-            La patrouille s'effectue à <strong>2 agents par véhicule</strong> dans la configuration standard. C'est la norme opérationnelle du LSPD.
+            La patrouille s'effectue à <strong>2 agents par véhicule</strong> dans la configuration standard. Le passager gère la radio.
           </div>
         </div>
         <div class="card">
           <div class="card-head">
             <div class="card-id"><div class="card-ico ico-amber">👤</div>
-            <div><div class="card-name">Patrouille solo</div><div class="card-sub">EXCEPTION</div></div></div>
+            <div><div class="card-name">Patrouille solo</div></div></div>
           </div>
           <div class="info-block warn" style="margin:0">
-            Autorisée <strong>uniquement si aucune autre option n'est possible</strong>. L'agent solo doit informer le dispatch de sa situation.
+            Autorisée <strong>uniquement si aucune autre option n'est possible</strong>. Annonce radio obligatoire.
           </div>
         </div>
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-teal">👥</div>
-            <div><div class="card-name">Patrouille à trois</div><div class="card-sub">CONFIGURATION ÉTENDUE</div></div></div>
-          </div>
-          <div class="info-block" style="margin:0">
-            Autorisé. Le 3ème agent se place <strong>à l'arrière derrière le conducteur</strong>. Passager avant : mégaphone &amp; balises. Passager arrière : radio.
-          </div>
-        </div>
-      </div>
-
-      <div class="sec-label">Véhicule & équipement embarqué</div>
-
-      <div class="group-card">
-        <div class="group-head">
-          <div class="card-ico ico-blue">🚔</div>
-          <div><div class="card-name">Règles véhicule</div><div class="card-sub">OBLIGATIONS À RESPECTER</div></div>
-        </div>
-        <ul class="steps-list">
-          <li class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-content">
-              <div class="step-title">État du véhicule</div>
-              <div class="step-desc">Le véhicule doit être rendu en bon état après chaque patrouille. Signaler tout dommage au superviseur.</div>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-content">
-              <div class="step-title">Niveau de carburant</div>
-              <div class="step-desc">Restituer le véhicule avec un niveau d'essence supérieur à la moitié du réservoir.</div>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-content">
-              <div class="step-title">Rangement</div>
-              <div class="step-desc">Garer le véhicule à sa place désignée au poste en fin de patrouille.</div>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">4</div>
-            <div class="step-content">
-              <div class="step-title">Matériel embarqué</div>
-              <div class="step-desc">Ordinateur de bord (fichier identités, immatriculations, permis, patrouilles en cours). Vérifier l'état du matériel avant le départ.</div>
-            </div>
-          </li>
-        </ul>
       </div>
     </div>
 
-    <!-- ══ ARRESTATION ══ -->
-    <div class="section" id="sec-arrestation">
+    <div class="section" id="sec-permis">
       <div class="topbar">
         <div class="topbar-left">
           <div class="page-label">Procédures</div>
-          <div class="page-title">Procédure <span>d'Arrestation</span></div>
-        </div>
-      </div>
-
-      <div class="alert danger">
-        <span class="alert-icon">🚨</span>
-        <span>Toute arrestation doit respecter scrupuleusement cette procédure. Une arrestation non conforme peut entraîner des poursuites disciplinaires contre l'agent et la libération du suspect.</span>
-      </div>
-
-      <div class="sec-label">Étapes de l'arrestation</div>
-
-      <div class="group-card">
-        <ul class="steps-list">
-          <li class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-content">
-              <div class="step-title">Interpellation verbale</div>
-              <div class="step-desc">Identifier clairement le suspect. Ordonner l'arrêt et la mise à terre les mains visibles. Annoncer votre qualité d'agent LSPD.</div>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-content">
-              <div class="step-title">Sécurisation</div>
-              <div class="step-desc">Menottage du suspect. Vérification de l'absence d'armes dissimulées. Sécuriser le périmètre avec les autres agents.</div>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-content">
-              <div class="step-title">Lecture des droits Miranda</div>
-              <div class="step-desc">Lire obligatoirement les droits Miranda au suspect avant tout interrogatoire. Voir la section dédiée.</div>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">4</div>
-            <div class="step-content">
-              <div class="step-title">Fouille et saisie</div>
-              <div class="step-desc">Fouille réglementaire du suspect. Saisie des éventuelles armes, drogues ou preuves. Documenter tout ce qui est saisi.</div>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">5</div>
-            <div class="step-content">
-              <div class="step-title">Transport au poste</div>
-              <div class="step-desc">Conduite du suspect menotté au poste. Isolement en cellule. Rédaction du rapport d'arrestation.</div>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">6</div>
-            <div class="step-content">
-              <div class="step-title">Traitement administratif</div>
-              <div class="step-desc">Saisie dans le casier judiciaire. Transmission au Legal Service si nécessaire. Archivage du dossier.</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="alert success">
-        <span class="alert-icon">✅</span>
-        <span>En cas de doute sur la légalité d'une arrestation, <strong>contactez immédiatement un superviseur</strong> avant de procéder. Mieux vaut prendre 2 minutes que de compromettre tout un dossier.</span>
-      </div>
-    </div>
-
-    <!-- ══ MIRANDA ══ -->
-    <div class="section" id="sec-miranda">
-      <div class="topbar">
-        <div class="topbar-left">
-          <div class="page-label">Procédures</div>
-          <div class="page-title">Droit <span>Miranda</span></div>
-        </div>
-      </div>
-
-      <div class="info-block warn">
-        La lecture des droits Miranda est <strong>obligatoire avant tout interrogatoire</strong>. L'omission de cette étape peut rendre les déclarations du suspect irrecevables et compromettre le dossier pénal.
-      </div>
-
-      <div class="sec-label">Formule officielle Miranda — LSPD NightCity FA</div>
-
-      <div class="cmd-card" style="background: rgba(15,40,70,0.5); border-color: rgba(55,138,221,0.25); border-top-color: rgba(201,168,76,0.7);">
-        <div class="cmd-ico">📋</div>
-        <div>
-          <div class="cmd-title" style="color: var(--blue3);">Droits Miranda</div>
-          <div class="cmd-body" style="color: var(--text2); line-height: 2.1;">
-            "Vous avez le droit de garder le silence.<br>
-            Tout ce que vous direz pourra être retenu contre vous.<br>
-            Vous avez le droit à un avocat.<br>
-            Si vous n'avez pas les moyens de vous en payer un, il vous en sera désigné un d'office.<br>
-            Comprenez-vous ces droits ?"
-          </div>
-          <div class="cmd-note" style="color: var(--dim);">La réponse du suspect doit être notée dans le rapport. Si le suspect refuse de répondre, le noter également.</div>
-        </div>
-      </div>
-
-      <div class="sec-label">Quand lire les droits Miranda ?</div>
-      <div class="cards-grid">
-        <div class="rule-card">
-          <div class="rule-num">✅</div>
-          <div class="rule-text"><strong>Avant tout interrogatoire</strong> — Dès que le suspect est en garde à vue et que vous souhaitez l'interroger.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">✅</div>
-          <div class="rule-text"><strong>Lors de l'arrestation</strong> — Recommandé de lire les droits sur place pour éviter tout oubli.</div>
-        </div>
-        <div class="rule-card">
-          <div class="rule-num">⛔</div>
-          <div class="rule-text"><strong>Pas obligatoire</strong> — Lors d'une simple interpellation ou vérification d'identité sans arrestation.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ DIVISIONS ══ -->
-    <div class="section" id="sec-divisions">
-      <div class="topbar">
-        <div class="topbar-left">
-          <div class="page-label">Divisions</div>
-          <div class="page-title">Unités <span>Spéciales</span></div>
+          <div class="page-title">Permis & <span>PPA</span></div>
         </div>
       </div>
 
       <div class="info-block">
-        Les unités spéciales sont des divisions d'élite au sein du LSPD. <strong>L'intégration dans une unité spéciale est conditionnée à un recrutement spécifique</strong> et à la validation de critères propres à chaque unité. Porter la tenue d'une unité sans y appartenir est une faute grave.
+        Lors de vos contrôles, vous serez amenés à vérifier la validité des documents officiels des citoyens. Confisquer une arme légale à un citoyen en règle est une faute grave qui peut entraîner une plainte au tribunal.
       </div>
 
-      <div class="sec-label">Divisions actives</div>
+      <div class="sec-label">Liste des Permis</div>
 
       <div class="cards-grid">
         <div class="card">
           <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-blue">🐕</div>
-            <div><div class="card-name">Unité K9</div><div class="card-sub">UNITÉ CYNOPHILE</div></div></div>
-            <span class="badge badge-blue">Division</span>
+            <div class="card-id"><div class="card-ico ico-blue">🚗</div>
+            <div><div class="card-name">Permis de Conduire</div><div class="card-sub">VOITURE / MOTO / CAMION</div></div></div>
           </div>
-          <div class="info-block" style="margin-bottom:12px">
-            Unité spécialisée dans le <strong>pistage, la détection de substances</strong> et le soutien terrain avec chien policier. Intervient sur demande de commandement.
+          <div class="info-block" style="margin:0">
+            Doit être présenté lors de tout contrôle routier. S'il est invalide ou absent : amende et mise en fourrière du véhicule.
           </div>
-          <div class="chips-row">
-            <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">575-1</span></div>
-            <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">133</span></div>
+        </div>
+        
+        <div class="card">
+          <div class="card-head">
+            <div class="card-id"><div class="card-ico ico-green">🔫</div>
+            <div><div class="card-name">PPA Léger</div><div class="card-sub">PERMIS DE PORT D'ARME (CIVIL)</div></div></div>
+          </div>
+          <div class="info-block success" style="margin:0">
+            Autorise le civil à porter <strong>une arme de poing classique</strong> (Pétoire, Pistolet de combat). L'arme ne doit pas être visible (holster ou sac). Tout usage abusif annule le PPA.
           </div>
         </div>
 
         <div class="card">
           <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-blue">✈️</div>
-            <div><div class="card-name">ASD Air Unit</div><div class="card-sub">UNITÉ AÉRIENNE</div></div></div>
-            <span class="badge badge-blue">Division</span>
+            <div class="card-id"><div class="card-ico ico-red">⚠️</div>
+            <div><div class="card-name">PPA Lourd</div><div class="card-sub">ARMES D'ASSAUT / SMG</div></div></div>
           </div>
-          <div class="info-block" style="margin-bottom:12px">
-            Surveillance aérienne du territoire, <strong>appui aux poursuites</strong> et reconnaissance de zone. Pilotes qualifiés uniquement.
-          </div>
-          <div class="chips-row">
-            <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">579</span></div>
-            <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">198</span></div>
+          <div class="info-block danger" style="margin:0">
+            <strong>Strictement illégal pour les civils.</strong> Ce permis (s'il existe) est réservé aux sociétés de sécurité privées enregistrées (ex: Gruppe6) pour les convoyages de fonds.
           </div>
         </div>
 
         <div class="card">
           <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-blue">🎯</div>
-            <div><div class="card-name">SWAT</div><div class="card-sub">SPECIAL WEAPONS AND TACTICS</div></div></div>
-            <span class="badge badge-blue">Division</span>
+            <div class="card-id"><div class="card-ico ico-amber">🦌</div>
+            <div><div class="card-name">Permis de Chasse</div><div class="card-sub">FUSIL À POMPE / SNIPER DE CHASSE</div></div></div>
           </div>
-          <div class="info-block" style="margin-bottom:12px">
-            Intervention lors de situations <strong>à haut risque</strong> : prises d'otages, suspects armés retranchés, braquages en cours. Activation sur ordre du commandement.
-          </div>
-          <div class="chips-row">
-            <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">757</span></div>
-            <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">92</span></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-blue">⚔️</div>
-            <div><div class="card-name">Ops Spéciales</div><div class="card-sub">TENUE DECONE 1</div></div></div>
-            <span class="badge badge-blue">Division</span>
-          </div>
-          <div class="info-block" style="margin-bottom:12px">
-            Opérations à <strong>caractère sensible</strong> ou classifié. Réservé aux agents ayant une habilitation spécifique.
-          </div>
-          <div class="chips-row">
-            <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">773</span></div>
-            <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">128</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="alert warn">
-        <span class="alert-icon">⚠️</span>
-        <span>L'activation d'une unité spéciale requiert <strong>une autorisation hiérarchique explicite</strong>. Aucune unité ne peut s'auto-déployer sans ordre de commandement, sauf cas d'urgence vitale immédiate avec rapport obligatoire a posteriori.</span>
-      </div>
-    </div>
-
-    <!-- ══ RÈGLEMENT ══ -->
-    <div class="section" id="sec-reglement">
-      <div class="topbar">
-        <div class="topbar-left">
-          <div class="page-label">Règlement</div>
-          <div class="page-title">Code de <span>Conduite</span></div>
-        </div>
-      </div>
-
-      <div class="hero-banner" style="border-top-color: var(--red1);">
-        <div class="hero-pre">📜 CHARTE DE L'AGENT LSPD</div>
-        <div class="hero-h">L'agent LSPD incarne la loi<br>et ses valeurs</div>
-        <div class="hero-p">Le port de l'insigne LSPD implique un engagement total envers le respect des procédures, de la hiérarchie et des citoyens de Los Santos. Ce code de conduite est non négociable.</div>
-      </div>
-
-      <div class="sec-label">Obligations de l'agent</div>
-
-      <div class="rule-card">
-        <div class="rule-num">01</div>
-        <div class="rule-text"><strong>Respecter et faire respecter la loi</strong> — L'agent LSPD applique les lois et règlements de Los Santos sans discrimination ni favoritisme.</div>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">02</div>
-        <div class="rule-text"><strong>Attitude professionnelle</strong> — Toujours courtois envers les civils, même en cas de manque de réciprocité. L'agent apaise les tensions, il ne les crée pas.</div>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">03</div>
-        <div class="rule-text"><strong>Respect de la hiérarchie</strong> — Les ordres des supérieurs sont exécutés. En cas de désaccord, la voie hiérarchique est utilisée hors opération.</div>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">04</div>
-        <div class="rule-text"><strong>Usage proportionné de la force</strong> — La force utilisée est toujours proportionnelle à la menace. Tout dérapage est sanctionné.</div>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">05</div>
-        <div class="rule-text"><strong>Tenue réglementaire</strong> — Le port de la tenue correspondant au grade et au DEFCON est obligatoire en service. Aucune exception non autorisée.</div>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">06</div>
-        <div class="rule-text"><strong>Formation continue</strong> — L'agent cherche à progresser dans la connaissance de son métier. La participation aux formations FTO est recommandée et valorisée.</div>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">07</div>
-        <div class="rule-text"><strong>Intégrité absolue</strong> — Aucune corruption, aucun trafic, aucune complicité avec des éléments criminels. Une enquête interne peut être ouverte à tout moment.</div>
-      </div>
-      <div class="rule-card">
-        <div class="rule-num">08</div>
-        <div class="rule-text"><strong>Confidentialité</strong> — Les informations opérationnelles et les données personnelles des citoyens restent strictement confidentielles.</div>
-      </div>
-
-      <div class="sec-label">Sanctions</div>
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-amber">⚠️</div>
-            <div><div class="card-name">Avertissement</div><div class="card-sub">NIVEAU 1</div></div></div>
-          </div>
-          <div class="info-block warn" style="margin:0">Manquement mineur à la procédure. Blâme oral ou écrit du supérieur hiérarchique.</div>
-        </div>
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-red">🚫</div>
-            <div><div class="card-name">Suspension</div><div class="card-sub">NIVEAU 2</div></div></div>
-          </div>
-          <div class="info-block danger" style="margin:0">Faute grave ou récidive. Suspension temporaire de service sur décision du commandement.</div>
-        </div>
-        <div class="card">
-          <div class="card-head">
-            <div class="card-id"><div class="card-ico ico-red">⛔</div>
-            <div><div class="card-name">Renvoi</div><div class="card-sub">NIVEAU 3</div></div></div>
-          </div>
-          <div class="info-block danger" style="margin:0">Faute grave répétée, corruption, complicité criminelle. Renvoi définitif sur décision du staff.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <img class="footer-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Los_Santos_Police_Department_Logo.png/240px-Los_Santos_Police_Department_Logo.png" alt="LSPD">
-      <div class="footer-text">LOS SANTOS POLICE DEPARTMENT &nbsp;·&nbsp; NIGHTCITY FA &nbsp;·&nbsp; DOCUMENT INTERNE — NON DIFFUSABLE</div>
-    </div>
-
-  </main>
-</div>
-
-<script>
-function goTo(el, section, colorClass) {
-  // Hide all sections
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
-  document.getElementById('sec-' + section).classList.add('visible');
-
-  // Update nav
-  document.querySelectorAll('.nav-item').forEach(n => {
-    n.classList.remove('active','c-blue','c-amber','c-teal','c-red','c-green');
-  });
-  el.classList.add('active', colorClass);
-
-  // Close sidebar on mobile
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('overlay').classList.remove('open');
-
-  // Scroll to top
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function goToId(section, colorClass) {
-  const navItem = document.querySelector(`[data-section="${section}"]`);
-  if (navItem) goTo(navItem, section, colorClass);
-}
-
-function toggleSidebar() {
-  const sb = document.getElementById('sidebar');
-  const ov = document.getElementById('overlay');
-  sb.classList.toggle('open');
-  ov.classList.toggle('open');
-}
-</script>
-
-</body>
-</html>
+          <div class="info-block warn" style="margin:0">
+            Valable
