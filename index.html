@@ -435,4 +435,314 @@ body::before {
 
   <!-- ══ NAVIGATION ══ -->
   <div class="nav-bar">
-    <button class="nav-btn active nb-blue" onclick="show('special',this
+    <button class="nav-btn active nb-blue" onclick="show('special',this,'nb-blue')">
+      ⚡ Unités spéciales
+    </button>
+    <button class="nav-btn" onclick="show('officiers',this,'nb-amber')">
+      👮 Officiers
+    </button>
+    <button class="nav-btn" onclick="show('superieurs',this,'nb-teal')">
+      ⭐ Grades supérieurs
+    </button>
+    <button class="nav-btn" onclick="show('commandement',this,'nb-red')">
+      👑 Commandement
+    </button>
+  </div>
+
+  <!-- ══ UNITÉS SPÉCIALES ══ -->
+  <div class="section visible" id="sec-special">
+    <div class="section-label">Unités spéciales</div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-ico ico-blue">🐕</div>
+            <div>
+              <div class="card-name">K9</div>
+              <div class="card-role">UNITÉ CYNOPHILE</div>
+            </div>
+          </div>
+          <span class="badge badge-blue">Spéciale</span>
+        </div>
+        <div class="items-row">
+          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
+          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">575-1</span></div>
+          <div class="chip"><span class="chip-lbl">Bras</span><span class="chip-val">20</span></div>
+          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">334</span></div>
+          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
+          <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">207</span></div>
+          <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">133</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-ico ico-blue">✈️</div>
+            <div>
+              <div class="card-name">ASD Air Unit</div>
+              <div class="card-role">UNITÉ AÉRIENNE</div>
+            </div>
+          </div>
+          <span class="badge badge-blue">Spéciale</span>
+        </div>
+        <div class="items-row">
+          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
+          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">579</span></div>
+          <div class="chip"><span class="chip-lbl">Bras</span><span class="chip-val">21</span></div>
+          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">214</span></div>
+          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
+          <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">198</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-ico ico-blue">🎯</div>
+            <div>
+              <div class="card-name">SWAT</div>
+              <div class="card-role">INTERVENTION TACTIQUE</div>
+            </div>
+          </div>
+          <span class="badge badge-blue">Spéciale</span>
+        </div>
+        <div class="items-row">
+          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">155</span></div>
+          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">757</span></div>
+          <div class="chip"><span class="chip-lbl">Bras</span><span class="chip-val">26</span></div>
+          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">333</span></div>
+          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
+          <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">92</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-ico ico-blue">⚔️</div>
+            <div>
+              <div class="card-name">Tenue Decone 1</div>
+              <div class="card-role">OPÉRATIONS SPÉCIALES</div>
+            </div>
+          </div>
+          <span class="badge badge-blue">Spéciale</span>
+        </div>
+        <div class="items-row">
+          <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
+          <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">773</span></div>
+          <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">333</span></div>
+          <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
+          <div class="chip"><span class="chip-lbl">GPB</span><span class="chip-val">128</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ OFFICIERS ══ -->
+  <div class="section" id="sec-officiers">
+    <div class="section-label">Officiers</div>
+
+    <div class="card" style="margin-bottom:12px">
+      <div class="card-top">
+        <div class="card-identity">
+          <div class="card-ico ico-amber">🆕</div>
+          <div>
+            <div class="card-name">Tenue R</div>
+            <div class="card-role">RECRUE</div>
+          </div>
+        </div>
+        <span class="badge badge-amber">Officier</span>
+      </div>
+      <div class="items-row">
+        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
+        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">600-4</span></div>
+        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
+        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
+        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-13</span></div>
+      </div>
+      <div class="defcon-row">
+        <div class="dc dc-green"><div class="dc-icon"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 82-2</div>
+        <div class="dc dc-red"><div class="dc-icon"></div>Defcon 2 &nbsp;·&nbsp; GPB 128</div>
+      </div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-top">
+        <div class="card-ico ico-amber">👮</div>
+        <div style="flex:1">
+          <div class="card-name">Tenues Off</div>
+          <div class="card-role">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
+        </div>
+        <span class="badge badge-amber">Officier</span>
+      </div>
+      <div class="grades-row">
+        <span class="grade-pill">Off</span>
+        <span class="grade-pill">Off-I</span>
+        <span class="grade-pill">Off-II</span>
+        <span class="grade-pill">Off-III</span>
+      </div>
+      <div class="items-row">
+        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
+        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">599-7</span></div>
+        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
+        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
+        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-1</span></div>
+      </div>
+      <div class="defcon-row">
+        <div class="dc dc-green"><div class="dc-icon"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 82</div>
+        <div class="dc dc-red"><div class="dc-icon"></div>Defcon 2 &nbsp;·&nbsp; GPB 128</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-identity">
+          <div class="card-ico ico-amber">✅</div>
+          <div>
+            <div class="card-name">Tenue SLO</div>
+            <div class="card-role">SENIOR LINE OFFICER</div>
+          </div>
+        </div>
+        <span class="badge badge-amber">Officier</span>
+      </div>
+      <div class="items-row">
+        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
+        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">599-7</span></div>
+        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
+        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
+        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-2</span></div>
+      </div>
+      <div class="defcon-row">
+        <div class="dc dc-green"><div class="dc-icon"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 114</div>
+        <div class="dc dc-red"><div class="dc-icon"></div>Defcon 2-1 &nbsp;·&nbsp; GPB 128</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ GRADES SUPÉRIEURS ══ -->
+  <div class="section" id="sec-superieurs">
+    <div class="section-label">Grades supérieurs</div>
+
+    <div class="group-card">
+      <div class="group-top">
+        <div class="card-ico ico-teal">🛡️</div>
+        <div style="flex:1">
+          <div class="card-name">Tenues SRG</div>
+          <div class="card-role">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
+        </div>
+        <span class="badge badge-teal">Supérieur</span>
+      </div>
+      <div class="grades-row">
+        <span class="grade-pill">SRG-I</span>
+        <span class="grade-pill">SRG-II</span>
+        <span class="grade-pill">SRG-III</span>
+      </div>
+      <div class="items-row">
+        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
+        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">768-0</span></div>
+        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
+        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
+        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-4</span></div>
+      </div>
+      <div class="defcon-row">
+        <div class="dc dc-green"><div class="dc-icon"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 128-1</div>
+        <div class="dc dc-red"><div class="dc-icon"></div>Defcon 2 &nbsp;·&nbsp; GPB 128</div>
+      </div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-top">
+        <div class="card-ico ico-teal">🏅</div>
+        <div style="flex:1">
+          <div class="card-name">Tenues Lieutenant</div>
+          <div class="card-role">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
+        </div>
+        <span class="badge badge-teal">Supérieur</span>
+      </div>
+      <div class="grades-row">
+        <span class="grade-pill">Lieutenant-I</span>
+        <span class="grade-pill">Lieutenant-II</span>
+        <span class="grade-pill">Lieutenant-III</span>
+      </div>
+      <div class="items-row">
+        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
+        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">768-0</span></div>
+        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
+        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
+        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-5</span></div>
+      </div>
+      <div class="defcon-row">
+        <div class="dc dc-green"><div class="dc-icon"></div>Defcon 5 → 3 &nbsp;·&nbsp; GPB 134-1</div>
+        <div class="dc dc-red"><div class="dc-icon"></div>Defcon 2-1 &nbsp;·&nbsp; GPB 128</div>
+      </div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-top">
+        <div class="card-ico ico-teal">🎖️</div>
+        <div style="flex:1">
+          <div class="card-name">Tenues Captain</div>
+          <div class="card-role">MÊME ÉQUIPEMENT POUR TOUS LES GRADES</div>
+        </div>
+        <span class="badge badge-teal">Supérieur</span>
+      </div>
+      <div class="grades-row">
+        <span class="grade-pill">Captain-I</span>
+        <span class="grade-pill">Captain-II</span>
+        <span class="grade-pill">Captain-III</span>
+      </div>
+      <div class="items-row">
+        <div class="chip"><span class="chip-lbl">T-shirt</span><span class="chip-val">131</span></div>
+        <div class="chip"><span class="chip-lbl">Haut</span><span class="chip-val">768-0</span></div>
+        <div class="chip"><span class="chip-lbl">Pantalon</span><span class="chip-val">331-1</span></div>
+        <div class="chip"><span class="chip-lbl">Chaussures</span><span class="chip-val">26</span></div>
+        <div class="chip"><span class="chip-lbl">Sac</span><span class="chip-val">184-6</span></div>
+      </div>
+      <div class="defcon-row">
+        <div class="dc dc-gray"><div class="dc-icon"></div>Defcon 5 → 1 &nbsp;·&nbsp; Gilet par balle au choix</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ COMMANDEMENT ══ -->
+  <div class="section" id="sec-commandement">
+    <div class="section-label">Commandement</div>
+    <div class="cmd-card">
+      <div class="cmd-icon">👑</div>
+      <div>
+        <div class="cmd-title">Tenue C-F — Staff &amp; Commandement</div>
+        <div class="cmd-detail">
+          Tenue blanche<br>
+          Gilet par balle au choix
+        </div>
+        <div class="cmd-note">Sur ordre du staff uniquement</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <div class="doc-footer">
+    <img class="footer-logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Los_Santos_Police_Department_Logo.png/240px-Los_Santos_Police_Department_Logo.png"
+      alt="LSPD">
+    <div class="footer-text">LOS SANTOS POLICE DEPARTMENT &nbsp;·&nbsp; NIGHTCITY FA &nbsp;·&nbsp; DOCUMENT INTERNE</div>
+  </div>
+
+</div>
+
+<script>
+function show(id, btn, colorClass) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+  document.getElementById('sec-' + id).classList.add('visible');
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    b.classList.remove('active','nb-blue','nb-amber','nb-teal','nb-red');
+  });
+  btn.classList.add('active', colorClass);
+}
+</script>
+
+</body>
+</html>
