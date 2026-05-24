@@ -1,160 +1,170 @@
 <!-- ========================= -->
-<!-- 👮 CATÉGORIE TENUES -->
+<!-- 🔎 BARRE DE RECHERCHE GLOBALE BCSO -->
 <!-- ========================= -->
 
-<section id="tenues">
+<section id="search-system">
 
-    <h2>👮 Uniformes & Tenues BCSO</h2>
+    <h2>🔎 Recherche rapide BCSO</h2>
 
     <p>
-        Chaque tenue correspond à un niveau hiérarchique précis.
-        Les uniformes deviennent plus sombres et plus prestigieux
-        selon le grade et les responsabilités.
+        Recherchez instantanément une infraction, un article du code pénal,
+        un code radio, une division, une arme, un grade ou une procédure.
     </p>
 
-    <div class="card-container">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Exemple : prise d'otage, 10-31, SWAT, homicide..."
+        style="
+        width:100%;
+        padding:15px;
+        border-radius:12px;
+        border:none;
+        outline:none;
+        background:#1b1b1b;
+        color:white;
+        font-size:16px;
+        margin-top:20px;
+        margin-bottom:25px;
+        "
+    >
 
-        <!-- ========================= -->
-        <!-- TRAINEE -->
-        <!-- ========================= -->
-
-        <div class="card">
-
-            <img src="images/trainee.png"
-                 style="
-                 width:100%;
-                 border-radius:10px;
-                 margin-bottom:15px;
-                 ">
-
-            <h3>🎓 Deputy Sheriff Trainee</h3>
-
-            <p>
-                Uniforme réservé aux recrues en formation.
-            </p>
-
-            <ul>
-                <li>Formation obligatoire</li>
-                <li>Aucune division</li>
-                <li>Taser uniquement</li>
-                <li>Accompagnement terrain obligatoire</li>
-            </ul>
-
-        </div>
-
-        <!-- ========================= -->
-        <!-- DEPUTY -->
-        <!-- ========================= -->
-
-        <div class="card">
-
-            <img src="images/deputy.png"
-                 style="
-                 width:100%;
-                 border-radius:10px;
-                 margin-bottom:15px;
-                 ">
-
-            <h3>🚔 Deputy Sheriff</h3>
-
-            <p>
-                Uniforme opérationnel standard des agents BCSO.
-            </p>
-
-            <ul>
-                <li>Patrouille active</li>
-                <li>Interventions terrain</li>
-                <li>Contrôles routiers</li>
-                <li>Accès divisions standards</li>
-            </ul>
-
-        </div>
-
-        <!-- ========================= -->
-        <!-- SUPERVISOR -->
-        <!-- ========================= -->
-
-        <div class="card">
-
-            <img src="images/supervisor.png"
-                 style="
-                 width:100%;
-                 border-radius:10px;
-                 margin-bottom:15px;
-                 ">
-
-            <h3>⭐ Supervisor</h3>
-
-            <p>
-                Uniforme des superviseurs et responsables terrain.
-            </p>
-
-            <ul>
-                <li>Gestion des scènes</li>
-                <li>Supervision des agents</li>
-                <li>Validation des interventions</li>
-                <li>Responsabilité hiérarchique</li>
-            </ul>
-
-        </div>
-
-        <!-- ========================= -->
-        <!-- COMMAND STAFF -->
-        <!-- ========================= -->
-
-        <div class="card">
-
-            <img src="images/commandstaff.png"
-                 style="
-                 width:100%;
-                 border-radius:10px;
-                 margin-bottom:15px;
-                 ">
-
-            <h3>🖤 Command Staff</h3>
-
-            <p>
-                Uniforme réservé au haut commandement du BCSO.
-            </p>
-
-            <ul>
-                <li>Captain</li>
-                <li>Commander</li>
-                <li>Assistant Sheriff</li>
-                <li>Undersheriff</li>
-                <li>Sheriff</li>
-            </ul>
-
-        </div>
-
-        <!-- ========================= -->
-        <!-- OPERATION -->
-        <!-- ========================= -->
-
-        <div class="card">
-
-            <img src="images/operation.png"
-                 style="
-                 width:100%;
-                 border-radius:10px;
-                 margin-bottom:15px;
-                 ">
-
-            <h3>⚫ Tenue Opération</h3>
-
-            <p>
-                Uniforme tactique réservé aux opérations à haut risque.
-            </p>
-
-            <ul>
-                <li>SWAT</li>
-                <li>Prises d’otages</li>
-                <li>Assauts tactiques</li>
-                <li>Interventions armées</li>
-            </ul>
-
-        </div>
-
-    </div>
+    <div id="searchResults"></div>
 
 </section>
+
+<!-- ========================= -->
+<!-- 📚 BASE DE DONNÉES -->
+<!-- ========================= -->
+
+<script>
+
+const database = [
+
+    {
+        title: "10-31",
+        category: "📻 Code Radio",
+        content: "Tirs d'armes à feu"
+    },
+
+    {
+        title: "10-93",
+        category: "📻 Code Radio",
+        content: "Prise d'otage"
+    },
+
+    {
+        title: "Prise d'otage",
+        category: "⚖️ Code pénal",
+        content: "250 000$ | 55 mois de prison"
+    },
+
+    {
+        title: "Homicide volontaire",
+        category: "⚖️ Code pénal",
+        content: "600 000$ | 95 mois de prison"
+    },
+
+    {
+        title: "SWAT",
+        category: "🛡️ Division",
+        content: "Accessible à partir du grade Deputy Sheriff III"
+    },
+
+    {
+        title: "Deputy Sheriff Trainee",
+        category: "👮 Grade",
+        content: "Formation obligatoire avant montée en grade"
+    },
+
+    {
+        title: "PPA Léger",
+        category: "🔫 Armement",
+        content: "Autorise uniquement les armes type Beretta"
+    },
+
+    {
+        title: "Command Staff",
+        category: "⭐ Hiérarchie",
+        content: "Grades supérieurs du BCSO"
+    }
+
+];
+
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+searchInput.addEventListener("keyup", function() {
+
+    let filter = searchInput.value.toLowerCase();
+
+    searchResults.innerHTML = "";
+
+    if(filter.length === 0) {
+        return;
+    }
+
+    let filtered = database.filter(item =>
+        item.title.toLowerCase().includes(filter) ||
+        item.content.toLowerCase().includes(filter)
+    );
+
+    if(filtered.length === 0) {
+
+        searchResults.innerHTML = `
+            <div style="
+                background:#2a0000;
+                padding:15px;
+                border-radius:10px;
+                color:white;
+            ">
+                ❌ Aucun résultat trouvé
+            </div>
+        `;
+
+        return;
+    }
+
+    filtered.forEach(item => {
+
+        searchResults.innerHTML += `
+
+            <div style="
+                background:#111827;
+                margin-bottom:15px;
+                padding:20px;
+                border-radius:12px;
+                border-left:5px solid #facc15;
+                transition:0.3s;
+            ">
+
+                <h3 style="
+                    margin:0;
+                    color:#facc15;
+                ">
+                    ${item.title}
+                </h3>
+
+                <p style="
+                    margin-top:8px;
+                    color:#9ca3af;
+                ">
+                    ${item.category}
+                </p>
+
+                <p style="
+                    margin-top:10px;
+                    color:white;
+                ">
+                    ${item.content}
+                </p>
+
+            </div>
+
+        `;
+
+    });
+
+});
+
+</script>
