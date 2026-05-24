@@ -1,162 +1,392 @@
-<!-- ========================= -->
-<!-- 🔎 BARRE DE RECHERCHE GLOBALE BCSO -->
-<!-- ========================= -->
+<!-- ================================================= -->
+<!-- 🛡️ BCSO - SYSTÈME DE NAVIGATION INTERACTIF -->
+<!-- ================================================= -->
 
-<section id="search-system">
+<!--
+REMPLACE :
+index.html/#codepenal
+PAR TON VRAI LIEN GITHUB PAGES
 
-    <h2>🔎 Recherche rapide BCSO</h2>
+EXEMPLE :
+https://bcso.github.io/site/#codepenal
+-->
+
+<nav class="navbar">
+
+    <a href="#accueil">🏠 Accueil</a>
+
+    <a href="#grades">⭐ Grades</a>
+
+    <a href="#divisions">🛡️ Divisions</a>
+
+    <a href="#tenues">👮 Uniformes</a>
+
+    <a href="#armement">🔫 Armement</a>
+
+    <a href="#ppa">📜 PPA</a>
+
+    <a href="#negociation">🗣️ Négociation</a>
+
+    <a href="#coderadio">📻 Codes Radio</a>
+
+    <a href="#codepenal">⚖️ Code Pénal</a>
+
+    <a href="#vehicules">🚔 Véhicules</a>
+
+    <a href="#procedures">📋 Procédures</a>
+
+</nav>
+
+<style>
+
+body{
+    margin:0;
+    background:#0f172a;
+    color:white;
+    font-family:Arial;
+}
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    padding:18px;
+    background:#020617;
+    border-bottom:2px solid #facc15;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:white;
+    background:#111827;
+    padding:12px 18px;
+    border-radius:12px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.navbar a:hover{
+    background:#facc15;
+    color:black;
+    transform:scale(1.05);
+}
+
+section{
+    padding:60px 30px;
+    border-bottom:1px solid #1e293b;
+}
+
+h1,h2{
+    color:#facc15;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+    margin-top:25px;
+}
+
+.card{
+    background:#111827;
+    border-radius:16px;
+    padding:20px;
+    transition:0.3s;
+    border-left:5px solid #facc15;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.quicklink{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 15px;
+    background:#facc15;
+    color:black;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.searchbar{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#111827;
+    color:white;
+    font-size:16px;
+}
+
+.code-item{
+    background:#111827;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+
+</style>
+
+<!-- ================================================= -->
+<!-- 🏠 ACCUEIL -->
+<!-- ================================================= -->
+
+<section id="accueil">
+
+    <h1>🛡️ Blane County Sheriff Office</h1>
 
     <p>
-        Recherchez instantanément une infraction, un article du code pénal,
-        un code radio, une division, une arme, un grade ou une procédure.
+        Plateforme officielle du BCSO.
+        Retrouvez rapidement toutes les procédures,
+        divisions, codes radio, grades, armements,
+        véhicules et réglementations.
     </p>
 
     <input
         type="text"
-        id="searchInput"
-        placeholder="Exemple : prise d'otage, 10-31, SWAT, homicide..."
-        style="
-        width:100%;
-        padding:15px;
-        border-radius:12px;
-        border:none;
-        outline:none;
-        background:#1b1b1b;
-        color:white;
-        font-size:16px;
-        margin-top:20px;
-        margin-bottom:25px;
-        "
+        id="globalSearch"
+        class="searchbar"
+        placeholder="🔎 Rechercher : SWAT, prise d'otage, 10-31, PPA..."
     >
 
-    <div id="searchResults"></div>
+    <div id="results" style="margin-top:25px;"></div>
 
 </section>
 
-<!-- ========================= -->
-<!-- 📚 BASE DE DONNÉES -->
-<!-- ========================= -->
+<!-- ================================================= -->
+<!-- ⭐ GRADES -->
+<!-- ================================================= -->
+
+<section id="grades">
+
+    <h2>⭐ Hiérarchie BCSO</h2>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <h3>🎓 Deputy Sheriff Trainee</h3>
+            <p>Formation obligatoire avant accès terrain.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚔 Deputy Sheriff I</h3>
+            <p>Premier grade opérationnel.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚓 Deputy Sheriff II</h3>
+            <p>Accès à plusieurs divisions.</p>
+        </div>
+
+        <div class="card">
+            <h3>⭐ Deputy Sheriff III</h3>
+            <p>Accès SWAT et divisions spécialisées.</p>
+        </div>
+
+        <div class="card">
+            <h3>🖤 Supervisor</h3>
+            <p>Grades chemise blanche.</p>
+        </div>
+
+        <div class="card">
+            <h3>👑 Command Staff</h3>
+            <p>Grades chemise noire.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- 🛡️ DIVISIONS -->
+<!-- ================================================= -->
+
+<section id="divisions">
+
+    <h2>🛡️ Divisions BCSO</h2>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <h3>🚔 Patrol Division</h3>
+            <p>Patrouilles et interventions classiques.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚫ SWAT</h3>
+            <p>Interventions tactiques et assauts.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚗 Traffic Unit</h3>
+            <p>Contrôles routiers et poursuites.</p>
+        </div>
+
+        <div class="card">
+            <h3>🕵️ Detective Bureau</h3>
+            <p>Enquêtes et investigations.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- 📻 CODE RADIO -->
+<!-- ================================================= -->
+
+<section id="coderadio">
+
+    <h2>📻 Codes Radio</h2>
+
+    <div class="code-item"><b>10-31</b> → Tirs d’armes à feu</div>
+    <div class="code-item"><b>10-35</b> → Demande de renfort</div>
+    <div class="code-item"><b>10-38</b> → Contrôle routier</div>
+    <div class="code-item"><b>10-40</b> → Braquage de supérette</div>
+    <div class="code-item"><b>10-56</b> → Refus d’obtempérer</div>
+    <div class="code-item"><b>10-57</b> → Délit de fuite</div>
+    <div class="code-item"><b>10-75</b> → Braquage d’ATM</div>
+    <div class="code-item"><b>10-91</b> → Braquage de banque</div>
+    <div class="code-item"><b>10-93</b> → Prise d’otage</div>
+    <div class="code-item"><b>11-99</b> → Officier en danger</div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- ⚖️ CODE PENAL -->
+<!-- ================================================= -->
+
+<section id="codepenal">
+
+    <h2>⚖️ Code Pénal</h2>
+
+    <p>
+        Le code pénal complet est consultable ici :
+    </p>
+
+    <a
+        class="quicklink"
+        target="_blank"
+        href="https://docs.google.com/spreadsheets/d/1mZDKdWChoSO5570sIJsvN3wFhKJ1UVRG_qg30m5TWeU/edit?gid=0#gid=0"
+    >
+        📄 Ouvrir le Code Pénal
+    </a>
+
+</section>
+
+<!-- ================================================= -->
+<!-- 🔫 ARMEMENT -->
+<!-- ================================================= -->
+
+<section id="armement">
+
+    <h2>🔫 Réglementation Armement</h2>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <h3>🔹 PPA Léger</h3>
+            <p>Autorise uniquement les armes type Beretta.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔸 PPA Classique</h3>
+            <p>Autorise les armes supérieures au Beretta.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚫ Armes Lourdes</h3>
+            <p>Réservées aux unités tactiques.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- 🗣️ NEGOCIATION -->
+<!-- ================================================= -->
+
+<section id="negociation">
+
+    <h2>🗣️ Procédures de Négociation</h2>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <h3>📞 Prise de contact</h3>
+            <p>Calme, respect et dialogue obligatoire.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚫 Protection des otages</h3>
+            <p>Aucune mise en danger inutile.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚠️ 3 ruptures = Assaut</h3>
+            <p>Après 3 ruptures de négociation, autorisation d’assaut RP.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- 🔎 SCRIPT RECHERCHE -->
+<!-- ================================================= -->
 
 <script>
 
-const database = [
+const data = [
 
-    {
-        title: "10-31",
-        category: "📻 Code Radio",
-        content: "Tirs d'armes à feu"
-    },
-
-    {
-        title: "10-93",
-        category: "📻 Code Radio",
-        content: "Prise d'otage"
-    },
-
-    {
-        title: "Prise d'otage",
-        category: "⚖️ Code pénal",
-        content: "250 000$ | 55 mois de prison"
-    },
-
-    {
-        title: "Homicide volontaire",
-        category: "⚖️ Code pénal",
-        content: "600 000$ | 95 mois de prison"
-    },
-
-    {
-        title: "SWAT",
-        category: "🛡️ Division",
-        content: "Accessible à partir du grade Deputy Sheriff III"
-    },
-
-    {
-        title: "Deputy Sheriff Trainee",
-        category: "👮 Grade",
-        content: "Formation obligatoire avant montée en grade"
-    },
-
-    {
-        title: "PPA Léger",
-        category: "🔫 Armement",
-        content: "Autorise uniquement les armes type Beretta"
-    },
-
-    {
-        title: "Command Staff",
-        category: "⭐ Hiérarchie",
-        content: "Grades supérieurs du BCSO"
-    }
+"SWAT",
+"Deputy Sheriff",
+"Prise d'otage",
+"10-31",
+"10-93",
+"PPA",
+"Braquage",
+"Code pénal",
+"Traffic Unit",
+"Detective Bureau",
+"Armement",
+"Supervisors",
+"Command Staff"
 
 ];
 
-const searchInput = document.getElementById("searchInput");
-const searchResults = document.getElementById("searchResults");
+const search = document.getElementById("globalSearch");
+const results = document.getElementById("results");
 
-searchInput.addEventListener("keyup", function() {
+search.addEventListener("keyup", () => {
 
-    let filter = searchInput.value.toLowerCase();
+    let value = search.value.toLowerCase();
 
-    searchResults.innerHTML = "";
+    results.innerHTML = "";
 
-    if(filter.length === 0) {
+    if(value === ""){
         return;
     }
 
-    let filtered = database.filter(item =>
-        item.title.toLowerCase().includes(filter) ||
-        item.content.toLowerCase().includes(filter)
-    );
+    data.filter(item =>
+        item.toLowerCase().includes(value)
+    ).forEach(item => {
 
-    if(filtered.length === 0) {
+        results.innerHTML += `
 
-        searchResults.innerHTML = `
-            <div style="
-                background:#2a0000;
-                padding:15px;
-                border-radius:10px;
-                color:white;
-            ">
-                ❌ Aucun résultat trouvé
-            </div>
-        `;
+            <div class="card">
 
-        return;
-    }
+                <h3>${item}</h3>
 
-    filtered.forEach(item => {
-
-        searchResults.innerHTML += `
-
-            <div style="
-                background:#111827;
-                margin-bottom:15px;
-                padding:20px;
-                border-radius:12px;
-                border-left:5px solid #facc15;
-                transition:0.3s;
-            ">
-
-                <h3 style="
-                    margin:0;
-                    color:#facc15;
-                ">
-                    ${item.title}
-                </h3>
-
-                <p style="
-                    margin-top:8px;
-                    color:#9ca3af;
-                ">
-                    ${item.category}
-                </p>
-
-                <p style="
-                    margin-top:10px;
-                    color:white;
-                ">
-                    ${item.content}
+                <p>
+                    Résultat trouvé dans la base BCSO.
                 </p>
 
             </div>
